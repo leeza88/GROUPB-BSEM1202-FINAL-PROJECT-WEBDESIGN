@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 520" fill="none">
+  <rect width="700" height="520" rx="24" fill="#e8f4fd"/>
+  <circle cx="350" cy="200" r="90" fill="#b8d9f0"/>
+  <!-- Doctor silhouette -->
+  <circle cx="350" cy="160" r="48" fill="#84b8d8"/>
+  <path d="M220 370 Q350 290 480 370 L480 520 L220 520 Z" fill="#84b8d8"/>
+  <!-- Stethoscope hint -->
+  <path d="M330 208 Q310 240 310 260 Q310 290 340 290 Q370 290 370 260 Q370 240 355 218" stroke="#0a6ebd" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <circle cx="310" cy="265" r="14" fill="#0a6ebd"/>
+  <!-- Cross -->
+  <rect x="320" y="390" width="20" height="60" rx="4" fill="#0a6ebd" opacity="0.3"/>
+  <rect x="295" y="415" width="70" height="20" rx="4" fill="#0a6ebd" opacity="0.3"/>
+  <text x="350" y="500" font-family="Arial,sans-serif" font-size="14" fill="#64748b" text-anchor="middle">Add about.jpg for best results</text>
+</svg>
