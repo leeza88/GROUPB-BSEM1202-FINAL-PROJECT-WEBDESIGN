@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Dashboard – SaloneMedConnect</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/auth.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="container">
+    <div class="top-bar-left">
+      <a href="tel:+23276000911" class="top-bar-item emergency"><i class="fas fa-phone-alt"></i> Emergency: +232 76 000 911</a>
+    </div>
+    <div class="top-bar-right">
+      <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<header>
+  <nav class="navbar" id="main-navbar">
+    <div class="container">
+      <a href="../index.html" class="navbar-logo">
+        <div class="logo-icon"><i class="fas fa-heartbeat"></i></div>
+        <div class="logo-text">
+          <span class="brand">SaloneMedConnect</span>
+          <span class="tagline">Digital Healthcare · Sierra Leone</span>
+        </div>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <ul class="navbar-menu" id="navbar-menu">
+        <li><a href="../index.html"  class="nav-link">Home</a></li>
+        <li><a href="doctors.html"   class="nav-link">Doctors</a></li>
+        <li><a href="appointments.html" class="nav-link">Book Appointment</a></li>
+        <li><a href="services.html"  class="nav-link">Services</a></li>
+        <li><a href="contact.html"   class="nav-link">Contact</a></li>
+      </ul>
+      <div class="navbar-actions" style="display:flex;align-items:center;gap:0.75rem">
+        <div data-auth-user style="display:none"></div>
+        <a href="login.html" data-auth-login class="btn btn-outline btn-sm"><i class="fas fa-sign-in-alt"></i> Sign In</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="mobile-menu-overlay" id="mobile-overlay"></div>
+
+<!-- DASHBOARD LAYOUT -->
+<div class="dashboard-layout" id="dashboard-root">
+
+  <!-- SIDEBAR -->
+  <aside class="dashboard-sidebar" id="dashboard-sidebar">
+    <div class="sidebar-user">
+      <div class="sidebar-avatar" id="sidebar-avatar">?</div>
+      <div class="sidebar-user-name" id="sidebar-name">Loading...</div>
+      <div class="sidebar-user-email" id="sidebar-email"></div>
+    </div>
+
+    <nav class="sidebar-nav" aria-label="Dashboard navigation">
+      <button class="sidebar-nav-item active" data-panel="overview" onclick="Dashboard.showPanel('overview', this)">
+        <i class="fas fa-th-large"></i> Overview
+      </button>
+      <button class="sidebar-nav-item" data-panel="appointments" onclick="Dashboard.showPanel('appointments', this)">
+        <i class="fas fa-calendar-check"></i> My Appointments
+        <span class="badge" id="appt-badge">0</span>
+      </button>
+      <button class="sidebar-nav-item" data-panel="health-advice" onclick="Dashboard.showPanel('health-advice', this)">
+        <i class="fas fa-shield-heart"></i> Health Advice
+      </button>
+      <button class="sidebar-nav-item" data-panel="videos" onclick="Dashboard.showPanel('videos', this)">
+        <i class="fas fa-play-circle"></i> Health Videos
+      </button>
+      <button class="sidebar-nav-item" data-panel="profile" onclick="Dashboard.showPanel('profile', this)">
+        <i class="fas fa-user-edit"></i> My Profile
+      </button>
+      <div style="margin:0.5rem 0.75rem;height:1px;background:var(--gray-100)"></div>
+      <a href="appointments.html" class="sidebar-nav-item">
+        <i class="fas fa-plus-circle"></i> Book New Appointment
+      </a>
+      <a href="doctors.html" class="sidebar-nav-item">
+        <i class="fas fa-user-md"></i> Find Doctors
+      </a>
+      <div style="margin:0.5rem 0.75rem;height:1px;background:var(--gray-100)"></div>
+      <button class="sidebar-nav-item" onclick="Auth.logout()" style="color:var(--error)">
+        <i class="fas fa-sign-out-alt"></i> Sign Out
+      </button>
+    </nav>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="dashboard-main" id="dashboard-main">
+
+    <!-- OVERVIEW PANEL -->
+    <div class="dashboard-panel active" id="panel-overview">
+      <div class="dash-welcome">
+        <h2 id="welcome-heading">Welcome back!</h2>
+        <p id="welcome-sub">Here's a summary of your health activity on SaloneMedConnect.</p>
+      </div>
+
+      <div class="dash-stats" id="dash-stats">
+        <div class="dash-stat-card">
+          <div class="dash-stat-icon" style="background:var(--primary-lighter);color:var(--primary-color)">
+            <i class="fas fa-calendar-check"></i>
+          </div>
+          <div>
+            <div class="stat-value" id="stat-total-appt">0</div>
+            <div class="stat-label">Total Appointments</div>
+          </div>
+        </div>
+        <div class="dash-stat-card">
+          <div class="dash-stat-icon" style="background:rgba(245,158,11,0.1);color:#f59e0b">
+            <i class="fas fa-clock"></i>
+          </div>
+          <div>
+            <div class="stat-value" id="stat-pending">0</div>
+            <div class="stat-label">Pending</div>
+          </div>
+        </div>
+        <div class="dash-stat-card">
+          <div class="dash-stat-icon" style="background:rgba(16,185,129,0.1);color:#10b981">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <div>
+            <div class="stat-value" id="stat-confirmed">0</div>
+            <div class="stat-label">Confirmed</div>
+          </div>
+        </div>
+        <div class="dash-stat-card">
+          <div class="dash-stat-icon" style="background:rgba(124,58,237,0.1);color:#7c3aed">
+            <i class="fas fa-user-md"></i>
+          </div>
+          <div>
+            <div class="stat-value" id="stat-doctors">0</div>
+            <div class="stat-label">Doctors Consulted</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Appointments -->
+      <div class="dash-section-title"><i class="fas fa-history"></i> Recent Appointments</div>
+      <div id="overview-appointments">
+        <div class="empty-state">
+          <i class="fas fa-calendar-plus"></i>
+          <p>You have no appointments yet.</p>
+          <a href="appointments.html" class="btn btn-primary btn-sm btn-ripple">
+            <i class="fas fa-plus"></i> Book Your First Appointment
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- APPOINTMENTS PANEL -->
+    <div class="dashboard-panel" id="panel-appointments">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;flex-wrap:wrap;gap:1rem">
+        <h2 class="dash-section-title" style="margin:0"><i class="fas fa-calendar-check"></i> My Appointments</h2>
+        <a href="appointments.html" class="btn btn-primary btn-sm btn-ripple">
+          <i class="fas fa-plus"></i> Book New
+        </a>
+      </div>
+      <div id="appointments-list"></div>
+    </div>
+
+    <!-- HEALTH ADVICE PANEL -->
+    <div class="dashboard-panel" id="panel-health-advice">
+      <div class="dash-section-title"><i class="fas fa-shield-heart"></i> Health Advice & Disease Prevention</div>
+      <p style="color:var(--gray-400);font-size:var(--font-size-sm);margin-bottom:1.5rem;line-height:1.7">
+        Evidence-based health guidance from Sierra Leone's medical experts — tailored to the most prevalent health challenges in our communities.
+      </p>
+      <div id="health-advice-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.25rem">
+        <!-- Loaded dynamically -->
+      </div>
+    </div>
+
+    <!-- VIDEOS PANEL -->
+    <div class="dashboard-panel" id="panel-videos">
+      <div class="dash-section-title"><i class="fas fa-play-circle"></i> Health Education Videos</div>
+      <p style="color:var(--gray-400);font-size:var(--font-size-sm);margin-bottom:1.5rem;line-height:1.7">
+        Curated medical education videos covering Sierra Leone's key health topics. Click to watch.
+      </p>
+      <div id="videos-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem">
+        <!-- Loaded dynamically -->
+      </div>
+    </div>
+
+    <!-- PROFILE PANEL -->
+    <div class="dashboard-panel" id="panel-profile">
+      <div class="dash-section-title"><i class="fas fa-user-edit"></i> My Profile</div>
+      <div style="background:var(--white);border:1px solid var(--gray-100);border-radius:var(--radius-2xl);padding:2rem">
+        <div style="display:flex;align-items:center;gap:1.5rem;margin-bottom:2rem;padding-bottom:1.5rem;border-bottom:1px solid var(--gray-100)">
+          <div class="sidebar-avatar" id="profile-avatar" style="width:80px;height:80px;font-size:1.75rem;flex-shrink:0">?</div>
+          <div>
+            <div style="font-family:var(--font-heading);font-size:var(--font-size-xl);font-weight:var(--font-bold);color:var(--gray-700)" id="profile-fullname">–</div>
+            <div style="color:var(--gray-400);font-size:var(--font-size-sm)" id="profile-email-disp">–</div>
+            <div style="font-size:var(--font-size-xs);color:var(--success);margin-top:4px"><i class="fas fa-check-circle"></i> Verified Account</div>
+          </div>
+        </div>
+        <form id="profile-form">
+          <div class="profile-grid">
+            <div class="form-group">
+              <label for="p-name">Full Name</label>
+              <input type="text" id="p-name" class="form-input">
+            </div>
+            <div class="form-group">
+              <label for="p-email">Email Address</label>
+              <input type="email" id="p-email" class="form-input">
+            </div>
+            <div class="form-group">
+              <label for="p-phone">Phone Number</label>
+              <input type="tel" id="p-phone" class="form-input">
+            </div>
+            <div class="form-group">
+              <label for="p-dob">Date of Birth</label>
+              <input type="date" id="p-dob" class="form-input">
+            </div>
+            <div class="form-group">
+              <label for="p-gender">Gender</label>
+              <select id="p-gender" class="form-select">
+                <option value="">-- Select --</option>
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+                <option value="Other">Other</option>
+                <option value="Prefer not to say">Prefer not to say</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-ripple" style="margin-top:1rem">
+            <i class="fas fa-save"></i> Save Changes
+          </button>
+          <div id="profile-feedback" class="form-feedback" role="alert" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- Video Modal -->
+<div id="video-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;align-items:center;justify-content:center;padding:1rem" onclick="closeVideoModal(event)" role="dialog" aria-modal="true" aria-label="Video player">
+  <div style="background:#000;border-radius:12px;overflow:hidden;width:100%;max-width:800px;position:relative">
+    <button onclick="closeVideoModal()" style="position:absolute;top:0.5rem;right:0.75rem;background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer;z-index:1" aria-label="Close video">
+      <i class="fas fa-times"></i>
+    </button>
+    <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden">
+      <iframe id="video-iframe" src="" frameborder="0" allowfullscreen
+        style="position:absolute;top:0;left:0;width:100%;height:100%"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+      </iframe>
+    </div>
+  </div>
+</div>
+
+<!-- Health Advice Modal -->
+<div id="advice-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:9999;align-items:center;justify-content:center;padding:1rem;overflow-y:auto" onclick="closeAdviceModal(event)" role="dialog" aria-modal="true">
+  <div id="advice-modal-content" style="background:var(--white);border-radius:var(--radius-2xl);max-width:600px;width:100%;padding:2rem;position:relative;margin:auto" onclick="event.stopPropagation()">
+    <button onclick="closeAdviceModal()" style="position:absolute;top:1rem;right:1rem;background:none;border:none;color:var(--gray-400);font-size:1.25rem;cursor:pointer" aria-label="Close"><i class="fas fa-times"></i></button>
+    <div id="advice-modal-body"></div>
+  </div>
+</div>
+
+<script src="../js/app.js" defer></script>
+<script src="../js/navbar.js" defer></script>
+<script src="../js/auth.js" defer></script>
+
+<script>
+'use strict';
+
+const Dashboard = {
+  user: null,
+
+  async init() {
+    this.user = Auth.getCurrentUser();
+    if (!this.user) { window.location.href = 'login.html?msg=required'; return; }
+
+    this.renderUserInfo();
+    this.renderStats();
+    this.renderOverviewAppointments();
+    this.renderAllAppointments();
+    await this.loadHealthAdvice();
+    await this.loadVideos();
+    this.populateProfileForm();
+
+    // Handle hash navigation
+    const hash = window.location.hash.replace('#', '');
+    if (hash && document.getElementById('panel-' + hash)) {
+      const btn = document.querySelector(`[data-panel="${hash}"]`);
+      this.showPanel(hash, btn);
+    }
+
+    // Profile form
+    document.getElementById('profile-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const updated = {
+        ...this.user,
+        fullName: document.getElementById('p-name').value.trim(),
+        email:    document.getElementById('p-email').value.trim(),
+        phone:    document.getElementById('p-phone').value.trim(),
+        dob:      document.getElementById('p-dob').value,
+        gender:   document.getElementById('p-gender').value
+      };
+      Auth.updateUser(updated);
+      this.user = Auth.getCurrentUser();
+      this.renderUserInfo();
+      const fb = document.getElementById('profile-feedback');
+      fb.className = 'form-feedback success';
+      fb.innerHTML = '<i class="fas fa-check-circle" style="font-size:1.25rem"></i><span>Profile updated successfully!</span>';
+      setTimeout(() => fb.className = 'form-feedback', 3000);
+    });
+  },
+
+  renderUserInfo() {
+    const u = this.user;
+    const initials = u.avatar || u.fullName.charAt(0);
+    ['sidebar-avatar','profile-avatar'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = initials;
+    });
+    const sn = document.getElementById('sidebar-name');
+    const se = document.getElementById('sidebar-email');
+    const wh = document.getElementById('welcome-heading');
+    const ws = document.getElementById('welcome-sub');
+    const fn = document.getElementById('profile-fullname');
+    const fe = document.getElementById('profile-email-disp');
+    if (sn) sn.textContent = u.fullName;
+    if (se) se.textContent = u.email;
+    if (wh) wh.textContent = `Welcome back, ${u.fullName.split(' ')[0]}! 👋`;
+    if (ws) ws.textContent = `Last login: ${new Date().toLocaleDateString('en-SL', { weekday:'long', year:'numeric', month:'long', day:'numeric' })}`;
+    if (fn) fn.textContent = u.fullName;
+    if (fe) fe.textContent = u.email;
+  },
+
+  renderStats() {
+    const appts = this.user.appointments || [];
+    const pending   = appts.filter(a => a.status === 'Pending').length;
+    const confirmed = appts.filter(a => a.status === 'Confirmed').length;
+    const doctors   = [...new Set(appts.map(a => a.doctor))].length;
+
+    this.setText('stat-total-appt', appts.length);
+    this.setText('stat-pending', pending);
+    this.setText('stat-confirmed', confirmed);
+    this.setText('stat-doctors', doctors);
+    this.setText('appt-badge', appts.length);
+  },
+
+  renderOverviewAppointments() {
+    const appts = (this.user.appointments || []).slice(0, 5);
+    const container = document.getElementById('overview-appointments');
+    if (!appts.length) return; // keep empty state
+    container.innerHTML = this.buildAppointmentTable(appts);
+  },
+
+  renderAllAppointments() {
+    const appts = this.user.appointments || [];
+    const container = document.getElementById('appointments-list');
+    if (!appts.length) {
+      container.innerHTML = `
+        <div class="empty-state">
+          <i class="fas fa-calendar-plus"></i>
+          <p>You have no appointments yet. Book your first one now.</p>
+          <a href="appointments.html" class="btn btn-primary btn-sm btn-ripple">
+            <i class="fas fa-plus"></i> Book Appointment
+          </a>
+        </div>`;
+      return;
+    }
+    container.innerHTML = this.buildAppointmentTable(appts);
+  },
+
+  buildAppointmentTable(appts) {
+    const statusClass = s => ({'Pending':'pending','Confirmed':'confirmed','Completed':'completed','Cancelled':'cancelled'}[s] || 'pending');
+    return `
+      <div class="appointment-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Doctor</th>
+              <th>Date & Time</th>
+              <th>Status</th>
+              <th>Booked On</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${appts.map(a => `
+              <tr>
+                <td><strong>${this.esc(a.doctor || '–')}</strong></td>
+                <td>${this.esc(a.date || '–')} at ${this.esc(a.time || '–')}</td>
+                <td><span class="status-badge ${statusClass(a.status)}">${a.status || 'Pending'}</span></td>
+                <td>${a.bookedAt ? new Date(a.bookedAt).toLocaleDateString('en-SL') : '–'}</td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      </div>`;
+  },
+
+  async loadHealthAdvice() {
+    const grid = document.getElementById('health-advice-grid');
+    try {
+      const res  = await fetch('../data/health-advice.json');
+      const data = await res.json();
+      grid.innerHTML = data.map(item => `
+        <div style="background:var(--white);border:1px solid var(--gray-100);border-radius:var(--radius-xl);padding:1.25rem;cursor:pointer;transition:all 0.2s"
+          onclick="Dashboard.openAdvice(${item.id})"
+          onmouseenter="this.style.transform='translateY(-3px)';this.style.boxShadow='var(--shadow-card)'"
+          onmouseleave="this.style.transform='';this.style.boxShadow=''">
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.875rem">
+            <div style="width:44px;height:44px;border-radius:var(--radius-lg);background:${item.bgColor};display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0">
+              <i class="${item.icon}" style="color:${item.color}"></i>
+            </div>
+            <div>
+              <div style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:${item.color}">${this.esc(item.category)}</div>
+              <div style="font-family:var(--font-heading);font-weight:600;font-size:var(--font-size-sm);color:var(--gray-700);line-height:1.3">${this.esc(item.title)}</div>
+            </div>
+          </div>
+          <p style="font-size:var(--font-size-xs);color:var(--gray-400);line-height:1.6;margin-bottom:0.75rem">${this.esc(item.summary)}</p>
+          <div style="font-size:var(--font-size-xs);color:${item.color};font-weight:600">
+            Read ${item.tips.length} prevention tips <i class="fas fa-arrow-right" style="font-size:10px"></i>
+          </div>
+        </div>
+      `).join('');
+      // Store for modal
+      window._healthAdviceData = data;
+    } catch(e) {
+      grid.innerHTML = '<p style="color:var(--gray-400);font-size:var(--font-size-sm)">Health advice content could not be loaded.</p>';
+    }
+  },
+
+  openAdvice(id) {
+    const data = window._healthAdviceData || [];
+    const item = data.find(d => d.id === id);
+    if (!item) return;
+    const modal = document.getElementById('advice-modal');
+    const body  = document.getElementById('advice-modal-body');
+    body.innerHTML = `
+      <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem">
+        <div style="width:56px;height:56px;border-radius:var(--radius-xl);background:${item.bgColor};display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0">
+          <i class="${item.icon}" style="color:${item.color}"></i>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:${item.color};margin-bottom:2px">${this.esc(item.category)}</div>
+          <h3 style="font-family:var(--font-heading);font-weight:700;color:var(--gray-700);font-size:var(--font-size-lg);line-height:1.3">${this.esc(item.title)}</h3>
+        </div>
+      </div>
+      <p style="color:var(--gray-500);font-size:var(--font-size-sm);line-height:1.75;margin-bottom:1.25rem">${this.esc(item.summary)}</p>
+      <h4 style="font-family:var(--font-heading);font-weight:600;color:var(--gray-700);margin-bottom:0.875rem"><i class="fas fa-check-circle" style="color:${item.color}"></i> Prevention Tips</h4>
+      <ul style="display:flex;flex-direction:column;gap:0.625rem;margin-bottom:1.5rem">
+        ${item.tips.map(t => `
+          <li style="display:flex;align-items:flex-start;gap:0.625rem;font-size:var(--font-size-sm);color:var(--gray-600);line-height:1.6">
+            <i class="fas fa-check" style="color:${item.color};margin-top:3px;flex-shrink:0;font-size:11px"></i>
+            ${this.esc(t)}
+          </li>
+        `).join('')}
+      </ul>
+      <div style="background:${item.bgColor};border:1px solid ${item.color}33;border-radius:var(--radius-lg);padding:1rem">
+        <div style="font-size:var(--font-size-xs);font-weight:700;color:${item.color};text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.375rem">
+          <i class="fas fa-exclamation-triangle"></i> Important
+        </div>
+        <p style="font-size:var(--font-size-xs);color:var(--gray-600);line-height:1.6;margin:0">${this.esc(item.warning)}</p>
+      </div>
+      ${item.prevalence ? `<p style="font-size:11px;color:var(--gray-400);margin-top:1rem;text-align:center"><i class="fas fa-info-circle"></i> ${this.esc(item.prevalence)}</p>` : ''}
+    `;
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  },
+
+  async loadVideos() {
+    const grid = document.getElementById('videos-grid');
+    try {
+      const res  = await fetch('../data/medical-videos.json');
+      const data = await res.json();
+      grid.innerHTML = data.map(v => `
+        <div style="background:var(--white);border:1px solid var(--gray-100);border-radius:var(--radius-xl);overflow:hidden;cursor:pointer;transition:all 0.2s"
+          onclick="Dashboard.playVideo('${v.youtubeId}', '${this.esc(v.title)}')"
+          onmouseenter="this.style.transform='translateY(-3px)';this.style.boxShadow='var(--shadow-card)'"
+          onmouseleave="this.style.transform='';this.style.boxShadow=''">
+          <div style="position:relative;overflow:hidden;height:165px;background:#1e293b">
+            <img src="${v.thumbnail}" alt="${this.esc(v.title)}" loading="lazy"
+              style="width:100%;height:100%;object-fit:cover;opacity:0.85;transition:opacity 0.2s"
+              onerror="this.style.display='none'"
+              onmouseenter="this.style.opacity='1'" onmouseleave="this.style.opacity='0.85'">
+            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
+              <div style="width:52px;height:52px;background:rgba(255,255,255,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.25rem;color:var(--primary-color);box-shadow:0 4px 20px rgba(0,0,0,0.3)">
+                <i class="fas fa-play" style="margin-left:3px"></i>
+              </div>
+            </div>
+            <div style="position:absolute;bottom:0.5rem;right:0.5rem;background:rgba(0,0,0,0.75);color:#fff;font-size:11px;padding:2px 7px;border-radius:4px">${v.duration}</div>
+            <div style="position:absolute;top:0.5rem;left:0.5rem;background:var(--primary-color);color:#fff;font-size:10px;padding:2px 8px;border-radius:4px;font-weight:600">${this.esc(v.category)}</div>
+          </div>
+          <div style="padding:1rem">
+            <h4 style="font-family:var(--font-heading);font-size:var(--font-size-sm);font-weight:600;color:var(--gray-700);margin-bottom:0.375rem;line-height:1.4">${this.esc(v.title)}</h4>
+            <p style="font-size:11px;color:var(--gray-400);margin-bottom:0.5rem;line-height:1.5">${this.esc(v.description)}</p>
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <span style="font-size:11px;color:var(--primary-color);font-weight:600">${this.esc(v.source)}</span>
+              <span style="font-size:11px;color:var(--gray-400)"><i class="fas fa-eye"></i> ${v.views}</span>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    } catch {
+      grid.innerHTML = '<p style="color:var(--gray-400);font-size:var(--font-size-sm)">Videos could not be loaded.</p>';
+    }
+  },
+
+  playVideo(youtubeId, title) {
+    const modal  = document.getElementById('video-modal');
+    const iframe = document.getElementById('video-iframe');
+    iframe.src   = `https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0`;
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  },
+
+  populateProfileForm() {
+    const u = this.user;
+    document.getElementById('p-name').value   = u.fullName || '';
+    document.getElementById('p-email').value  = u.email    || '';
+    document.getElementById('p-phone').value  = u.phone    || '';
+    document.getElementById('p-dob').value    = u.dob      || '';
+    document.getElementById('p-gender').value = u.gender   || '';
+  },
+
+  showPanel(name, triggerBtn) {
+    // Hide all panels
+    document.querySelectorAll('.dashboard-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.sidebar-nav-item').forEach(b => b.classList.remove('active'));
+    // Show target
+    const panel = document.getElementById('panel-' + name);
+    if (panel) panel.classList.add('active');
+    if (triggerBtn) triggerBtn.classList.add('active');
+    window.location.hash = name;
+  },
+
+  setText(id, val) {
+    const el = document.getElementById(id);
+    if (el) el.textContent = val;
+  },
+
+  esc(str) {
+    if (!str) return '';
+    const d = document.createElement('div');
+    d.textContent = str;
+    return d.innerHTML;
+  }
+};
+
+function closeVideoModal(e) {
+  if (e && e.target !== document.getElementById('video-modal') && e.type !== 'click') return;
+  if (e && e.target !== document.getElementById('video-modal')) return;
+  const modal = document.getElementById('video-modal');
+  const iframe = document.getElementById('video-iframe');
+  iframe.src = '';
+  modal.style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+document.querySelectorAll('#video-modal button').forEach(btn => btn.addEventListener('click', () => {
+  document.getElementById('video-iframe').src = '';
+  document.getElementById('video-modal').style.display = 'none';
+  document.body.style.overflow = '';
+}));
+
+function closeAdviceModal(e) {
+  if (!e || e.target === document.getElementById('advice-modal')) {
+    document.getElementById('advice-modal').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    closeVideoModal();
+    closeAdviceModal();
+  }
+});
+
+document.addEventListener('DOMContentLoaded', () => Dashboard.init());
+</script>
+
+</body>
+</html>

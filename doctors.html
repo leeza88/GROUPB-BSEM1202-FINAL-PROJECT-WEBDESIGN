@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Doctors – SaloneMedConnect</title>
+  <meta name="description" content="Browse and book appointments with Sierra Leone's top verified doctors across all specialties. Filter by specialty, location, and availability.">
+  <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/auth.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <div id="scroll-progress"></div>
+  <style>
+    .filters-bar { background:var(--white); border:1px solid var(--gray-100); border-radius:var(--radius-2xl); padding:var(--space-5) var(--space-6); margin-bottom:var(--space-8); display:flex; gap:var(--space-4); flex-wrap:wrap; align-items:center; box-shadow:var(--shadow-sm); }
+    .filter-group { display:flex; flex-direction:column; gap:var(--space-1); flex:1; min-width:160px; }
+    .filter-group label { font-size:var(--font-size-xs); font-weight:var(--font-medium); color:var(--gray-500); text-transform:uppercase; letter-spacing:0.06em; }
+    .filter-select { padding:0.6rem 1rem; border:1.5px solid var(--gray-100); border-radius:var(--radius-lg); font-size:var(--font-size-sm); color:var(--gray-700); background:var(--off-white); cursor:pointer; transition:border-color var(--transition-fast); }
+    .filter-select:focus { border-color:var(--primary-color); outline:none; }
+    .search-input { padding:0.6rem 1rem 0.6rem 2.5rem; border:1.5px solid var(--gray-100); border-radius:var(--radius-lg); font-size:var(--font-size-sm); color:var(--gray-700); background:var(--off-white); width:100%; transition:border-color var(--transition-fast); }
+    .search-input:focus { border-color:var(--primary-color); outline:none; }
+    .search-wrap { position:relative; flex:1.5; min-width:220px; }
+    .search-wrap i { position:absolute; left:0.875rem; top:50%; transform:translateY(-50%); color:var(--gray-300); font-size:0.875rem; pointer-events:none; }
+    .no-results { grid-column:1/-1; text-align:center; padding:4rem 2rem; }
+    .no-results i { font-size:3rem; color:var(--gray-200); margin-bottom:1rem; display:block; }
+    .no-results p { color:var(--gray-400); }
+    @media(max-width:767px) { .filters-bar { flex-direction:column; } .filter-group,.search-wrap { min-width:100%; } }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <a href="tel:+23276000911" class="top-bar-item emergency"><i class="fas fa-phone-alt"></i> Emergency: +232 76 000 911</a>
+        <a href="mailto:info@salonemedconnect.sl" class="top-bar-item"><i class="fas fa-envelope"></i> info@salonemedconnect.sl</a>
+      </div>
+      <div class="top-bar-right">
+        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header>
+    <nav class="navbar" id="main-navbar">
+      <div class="container">
+        <a href="../index.html" class="navbar-logo">
+          <div class="logo-icon"><i class="fas fa-heartbeat"></i></div>
+          <div class="logo-text">
+            <span class="brand">SaloneMedConnect</span>
+            <span class="tagline">Digital Healthcare · Sierra Leone</span>
+          </div>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="navbar-menu" id="navbar-menu">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html"    class="nav-link">About</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="doctors.html"  class="nav-link active">Doctors</a></li>
+          <li><a href="appointments.html" class="nav-link">Appointments</a></li>
+          <li><a href="contact.html"  class="nav-link">Contact</a></li>
+        </ul>
+        <div class="navbar-actions" style="display:flex;align-items:center;gap:0.5rem">
+          <div data-auth-user style="display:none"></div>
+          <a href="login.html" data-auth-login class="btn btn-outline btn-sm"><i class="fas fa-sign-in-alt"></i> Sign In</a>
+          <a href="appointments.html" class="btn btn-primary btn-ripple"><i class="fas fa-calendar-plus"></i> Book Appointment</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="mobile-menu-overlay" id="mobile-overlay"></div>
+
+  <main>
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="container">
+        <h1>Find a Doctor</h1>
+        <p>Browse our network of 150+ verified healthcare professionals across Sierra Leone.</p>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a>
+          <i class="fas fa-chevron-right"></i>
+          <span>Doctors</span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- DOCTORS LISTING -->
+    <section class="section-padding" style="background:var(--off-white)">
+      <div class="container">
+
+        <!-- Filters -->
+        <div class="filters-bar animate-on-scroll fade-up" role="search" aria-label="Filter doctors">
+          <div class="search-wrap">
+            <label for="search-doctors" class="sr-only">Search doctors</label>
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <input type="search" id="search-doctors" class="search-input" placeholder="Search by name or specialty..." aria-label="Search doctors">
+          </div>
+          <div class="filter-group">
+            <label for="filter-specialty">Specialty</label>
+            <select id="filter-specialty" class="filter-select" aria-label="Filter by specialty">
+              <option value="">All Specialties</option>
+              <option>General Practitioner</option>
+              <option>Cardiologist</option>
+              <option>Pediatrician</option>
+              <option>Gynecologist & Obstetrician</option>
+              <option>Orthopedic Surgeon</option>
+              <option>Dermatologist</option>
+              <option>Ophthalmologist</option>
+              <option>Neurologist</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="filter-availability">Availability</label>
+            <select id="filter-availability" class="filter-select" aria-label="Filter by availability">
+              <option value="">Any Availability</option>
+              <option value="available">Available Now</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="filter-sort">Sort By</label>
+            <select id="filter-sort" class="filter-select" aria-label="Sort doctors">
+              <option value="rating">Highest Rated</option>
+              <option value="experience">Most Experienced</option>
+              <option value="name">Name (A–Z)</option>
+            </select>
+          </div>
+          <button id="reset-filters" class="btn btn-outline btn-sm" aria-label="Reset all filters">
+            <i class="fas fa-undo"></i> Reset
+          </button>
+        </div>
+
+        <p id="results-count" style="color:var(--gray-400);font-size:var(--font-size-sm);margin-bottom:var(--space-5)" aria-live="polite"></p>
+
+        <!-- Grid -->
+        <div class="doctors-grid" id="doctors-grid" aria-label="Doctor profiles">
+          <!-- Loaded by doctors-page.js -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA STRIP -->
+    <div class="trust-strip">
+      <div class="container">
+        <div class="trust-item"><i class="fas fa-user-shield"></i><div><strong>SLMDC Verified</strong><span>All doctors licensed</span></div></div>
+        <div class="trust-item"><i class="fas fa-star"></i><div><strong>4.8 Average Rating</strong><span>From thousands of patients</span></div></div>
+        <div class="trust-item"><i class="fas fa-clock"></i><div><strong>Fast Booking</strong><span>Book in under 2 minutes</span></div></div>
+        <div class="trust-item"><i class="fas fa-map-marked-alt"></i><div><strong>All 14 Districts</strong><span>Nationwide coverage</span></div></div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-main">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <div class="footer-logo-wrap"><div class="footer-logo-icon"><i class="fas fa-heartbeat"></i></div><span class="footer-brand">SaloneMedConnect</span></div>
+            <p class="footer-desc">Sierra Leone's trusted digital healthcare platform.</p>
+            <div class="footer-social">
+              <a href="#" class="footer-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="footer-social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="footer-social-link" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+              <a href="#" class="footer-social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="../index.html" class="footer-link"><i class="fas fa-chevron-right"></i> Home</a></li>
+              <li><a href="about.html"    class="footer-link"><i class="fas fa-chevron-right"></i> About</a></li>
+              <li><a href="services.html" class="footer-link"><i class="fas fa-chevron-right"></i> Services</a></li>
+              <li><a href="doctors.html"  class="footer-link"><i class="fas fa-chevron-right"></i> Doctors</a></li>
+              <li><a href="appointments.html" class="footer-link"><i class="fas fa-chevron-right"></i> Appointments</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Specialties</h4>
+            <ul class="footer-links">
+              <li><a href="doctors.html" class="footer-link"><i class="fas fa-chevron-right"></i> General Practice</a></li>
+              <li><a href="doctors.html" class="footer-link"><i class="fas fa-chevron-right"></i> Cardiology</a></li>
+              <li><a href="doctors.html" class="footer-link"><i class="fas fa-chevron-right"></i> Pediatrics</a></li>
+              <li><a href="doctors.html" class="footer-link"><i class="fas fa-chevron-right"></i> Obstetrics & Gynaecology</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <div class="footer-contact-items">
+              <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><div><strong>Address</strong>Freetown, Sierra Leone</div></div>
+              <div class="footer-contact-item"><i class="fas fa-phone-alt"></i><div><strong>Phone</strong><a href="tel:+23276000911" style="color:inherit">+232 76 000 911</a></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="footer-copyright">&copy; <span id="footer-year">2025</span> SaloneMedConnect. All rights reserved.</p>
+        <div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-to-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+
+  <script src="../js/app.js"        defer></script>
+  <script src="../js/navbar.js"     defer></script>
+  <script src="../js/auth.js"       defer></script>
+  <script src="../js/animations.js" defer></script>
+  <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+
+  <!-- Page-specific doctor filtering logic -->
+  <script defer>
+  document.addEventListener('DOMContentLoaded', async () => {
+    let allDoctors = [];
+    const grid        = document.getElementById('doctors-grid');
+    const searchInput = document.getElementById('search-doctors');
+    const filterSpec  = document.getElementById('filter-specialty');
+    const filterAvail = document.getElementById('filter-availability');
+    const filterSort  = document.getElementById('filter-sort');
+    const resetBtn    = document.getElementById('reset-filters');
+    const countEl     = document.getElementById('results-count');
+
+    // Load data
+    try {
+      const res = await fetch('../data/doctors.json');
+      allDoctors = await res.json();
+    } catch {
+      allDoctors = [
+        { id:1, name:"Dr. Aminata Koroma",  specialty:"General Practitioner", hospital:"Connaught Hospital, Freetown",   experience:12, rating:4.9, reviews:148, image:"../images/doctors/doctor1.jpg", available:true  },
+        { id:2, name:"Dr. Mohamed Sesay",   specialty:"Cardiologist",          hospital:"Sierra Leone Military Hospital", experience:15, rating:4.8, reviews:203, image:"../images/doctors/doctor2.jpg", available:true  },
+        { id:3, name:"Dr. Fatima Bangura",  specialty:"Pediatrician",          hospital:"Ola During Children's Hospital", experience:10, rating:4.9, reviews:312, image:"../images/doctors/doctor3.jpg", available:true  },
+        { id:4, name:"Dr. Ibrahim Conteh",  specialty:"Orthopedic Surgeon",    hospital:"Princess Christian Maternity Hospital", experience:18, rating:4.7, reviews:176, image:"../images/doctors/doctor4.jpg", available:false },
+        { id:5, name:"Dr. Mariama Turay",   specialty:"Gynecologist & Obstetrician", hospital:"Choithram Hospital", experience:14, rating:4.9, reviews:289, image:"../images/doctors/doctor5.jpg", available:true  },
+        { id:6, name:"Dr. Emmanuel Johnson",specialty:"Dermatologist",         hospital:"Lumley Government Hospital",    experience:9,  rating:4.6, reviews:134, image:"../images/doctors/doctor6.jpg", available:true  },
+        { id:7, name:"Dr. Sarah Williams",  specialty:"Ophthalmologist",       hospital:"National Eye Hospital",         experience:11, rating:4.8, reviews:167, image:"../images/doctors/doctor7.jpg", available:true  },
+        { id:8, name:"Dr. Abdul Kamara",    specialty:"Neurologist",           hospital:"Connaught Hospital, Freetown",  experience:16, rating:4.7, reviews:98,  image:"../images/doctors/doctor8.jpg", available:true  }
+      ];
+    }
+
+    function generateStars(rating) {
+      const full = Math.floor(rating), half = rating % 1 >= 0.5 ? 1 : 0, empty = 5 - full - half;
+      return '<i class="fas fa-star star"></i>'.repeat(full) + (half ? '<i class="fas fa-star-half-alt star half"></i>' : '') + '<i class="far fa-star star empty"></i>'.repeat(empty);
+    }
+
+    function renderDoctors(docs) {
+      if (countEl) countEl.textContent = `Showing ${docs.length} doctor${docs.length !== 1 ? 's' : ''}`;
+      if (!docs.length) {
+        grid.innerHTML = '<div class="no-results"><i class="fas fa-search"></i><p>No doctors match your search. Try adjusting your filters.</p></div>';
+        return;
+      }
+      grid.innerHTML = docs.map((d, i) => `
+        <article class="doctor-card animate-on-scroll fade-up" style="animation-delay:${(i%4)*80}ms">
+          <div class="doctor-image">
+            <img src="${d.image}" alt="${d.name}" loading="lazy" onerror="this.src='../images/doctors/placeholder.jpg';this.style.padding='1.5rem';this.style.objectFit='contain'">
+            <span class="doctor-status" ${!d.available ? 'style="background:#94a3b8"' : ''}>${d.available ? 'Available' : 'Unavailable'}</span>
+          </div>
+          <div class="doctor-info">
+            <h3>${d.name}</h3>
+            <p class="doctor-specialty">${d.specialty}</p>
+            <div class="doctor-meta">
+              <span class="doctor-meta-item"><i class="fas fa-hospital"></i>${d.hospital.split(',')[0]}</span>
+              <span class="doctor-meta-item"><i class="fas fa-clock"></i>${d.experience} yrs</span>
+            </div>
+            <div class="doctor-rating" aria-label="Rating ${d.rating} of 5">
+              <div class="stars" aria-hidden="true">${generateStars(d.rating)}</div>
+              <span class="rating-text">${d.rating} (${d.reviews})</span>
+            </div>
+            <a href="appointments.html?doctor=${encodeURIComponent(d.name)}" class="btn btn-primary" style="width:100%;border-radius:var(--radius-lg);font-size:0.75rem;padding:0.6rem" ${!d.available ? 'style="opacity:0.5;pointer-events:none"' : ''}>
+              <i class="fas fa-calendar-plus"></i> Book Appointment
+            </a>
+          </div>
+        </article>
+      `).join('');
+      if (window.AnimationsModule) AnimationsModule.observeElements();
+    }
+
+    function applyFilters() {
+      const search = searchInput.value.toLowerCase().trim();
+      const spec   = filterSpec.value;
+      const avail  = filterAvail.value;
+      const sort   = filterSort.value;
+
+      let filtered = allDoctors.filter(d => {
+        const matchSearch = !search || d.name.toLowerCase().includes(search) || d.specialty.toLowerCase().includes(search) || d.hospital.toLowerCase().includes(search);
+        const matchSpec   = !spec   || d.specialty === spec;
+        const matchAvail  = !avail  || (avail === 'available' && d.available);
+        return matchSearch && matchSpec && matchAvail;
+      });
+
+      if (sort === 'rating')     filtered.sort((a,b) => b.rating - a.rating);
+      if (sort === 'experience') filtered.sort((a,b) => b.experience - a.experience);
+      if (sort === 'name')       filtered.sort((a,b) => a.name.localeCompare(b.name));
+
+      renderDoctors(filtered);
+    }
+
+    searchInput.addEventListener('input',  applyFilters);
+    filterSpec.addEventListener('change',  applyFilters);
+    filterAvail.addEventListener('change', applyFilters);
+    filterSort.addEventListener('change',  applyFilters);
+    resetBtn.addEventListener('click', () => {
+      searchInput.value = ''; filterSpec.value = ''; filterAvail.value = ''; filterSort.value = 'rating';
+      applyFilters();
+    });
+
+    renderDoctors(allDoctors);
+  });
+  </script>
+
+</body>
+</html>

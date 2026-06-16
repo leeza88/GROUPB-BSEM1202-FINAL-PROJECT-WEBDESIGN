@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Appointment – SaloneMedConnect</title>
+  <meta name="description" content="Book an appointment with a verified doctor in Sierra Leone. Fast, easy, and secure appointment booking with SaloneMedConnect.">
+  <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/auth.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <div id="scroll-progress"></div>
+  <style>
+    .appointment-page { background:var(--off-white); padding:var(--space-16) 0; }
+    .apt-wrapper { display:grid; grid-template-columns:1fr 1.5fr; gap:var(--space-10); max-width:1080px; margin:0 auto; }
+    .steps-list { display:flex; flex-direction:column; gap:var(--space-5); }
+    .step-item { display:flex; gap:var(--space-4); align-items:flex-start; }
+    .step-num { width:40px; height:40px; background:linear-gradient(135deg,var(--primary-color),var(--secondary-color)); color:var(--white); border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:var(--font-bold); font-family:var(--font-heading); flex-shrink:0; font-size:0.875rem; }
+    .step-text strong { display:block; font-weight:var(--font-semibold); color:var(--gray-700); margin-bottom:3px; }
+    .step-text span { font-size:var(--font-size-sm); color:var(--gray-400); }
+    @media(max-width:767px) { .apt-wrapper { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <a href="tel:+23276000911" class="top-bar-item emergency"><i class="fas fa-phone-alt"></i> Emergency: +232 76 000 911</a>
+        <a href="mailto:info@salonemedconnect.sl" class="top-bar-item"><i class="fas fa-envelope"></i> info@salonemedconnect.sl</a>
+      </div>
+      <div class="top-bar-right">
+        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header>
+    <nav class="navbar" id="main-navbar">
+      <div class="container">
+        <a href="../index.html" class="navbar-logo">
+          <div class="logo-icon"><i class="fas fa-heartbeat"></i></div>
+          <div class="logo-text">
+            <span class="brand">SaloneMedConnect</span>
+            <span class="tagline">Digital Healthcare · Sierra Leone</span>
+          </div>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <ul class="navbar-menu" id="navbar-menu">
+          <li><a href="../index.html"  class="nav-link">Home</a></li>
+          <li><a href="about.html"     class="nav-link">About</a></li>
+          <li><a href="services.html"  class="nav-link">Services</a></li>
+          <li><a href="doctors.html"   class="nav-link">Doctors</a></li>
+          <li><a href="appointments.html" class="nav-link active">Appointments</a></li>
+          <li><a href="contact.html"   class="nav-link">Contact</a></li>
+        </ul>
+        <div class="navbar-actions" style="display:flex;align-items:center;gap:0.5rem">
+          <div data-auth-user style="display:none"></div>
+          <a href="login.html" data-auth-login class="btn btn-outline btn-sm"><i class="fas fa-sign-in-alt"></i> Sign In</a>
+          <a href="appointments.html" class="btn btn-primary btn-ripple"><i class="fas fa-calendar-plus"></i> Book Appointment</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="mobile-menu-overlay" id="mobile-overlay"></div>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Book an Appointment</h1>
+        <p>Schedule a visit with a verified Sierra Leonean healthcare professional quickly and easily.</p>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a>
+          <i class="fas fa-chevron-right"></i>
+          <span>Appointments</span>
+        </nav>
+      </div>
+    </section>
+
+    <div class="appointment-page">
+      <div class="container">
+        <div class="apt-wrapper">
+
+          <!-- Info Side -->
+          <div class="animate-on-scroll fade-left">
+            <span class="section-badge" style="margin-bottom:1.5rem;display:inline-block">How It Works</span>
+            <h2 style="font-family:var(--font-heading);font-size:var(--font-size-2xl);font-weight:var(--font-bold);color:var(--gray-700);line-height:1.3;margin-bottom:1.5rem">
+              Book Your Appointment in <span style="color:var(--primary-color)">3 Easy Steps</span>
+            </h2>
+            <div class="steps-list">
+              <div class="step-item">
+                <div class="step-num">1</div>
+                <div class="step-text">
+                  <strong>Fill in Your Details</strong>
+                  <span>Enter your name, contact information, and choose your preferred doctor from our verified network.</span>
+                </div>
+              </div>
+              <div class="step-item">
+                <div class="step-num">2</div>
+                <div class="step-text">
+                  <strong>Choose a Date & Time</strong>
+                  <span>Select a convenient appointment date and time slot that works for your schedule.</span>
+                </div>
+              </div>
+              <div class="step-item">
+                <div class="step-num">3</div>
+                <div class="step-text">
+                  <strong>Receive Confirmation</strong>
+                  <span>Get instant confirmation via email and SMS. We'll remind you 24 hours before your appointment.</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="background:var(--primary-lighter);border-radius:var(--radius-xl);padding:var(--space-5);margin-top:var(--space-8)">
+              <h4 style="font-family:var(--font-heading);font-weight:var(--font-semibold);color:var(--primary-dark);margin-bottom:var(--space-2)">
+                <i class="fas fa-info-circle"></i> Need Help?
+              </h4>
+              <p style="font-size:var(--font-size-sm);color:var(--gray-500);line-height:1.7">
+                Call us at <a href="tel:+23277000123" style="color:var(--primary-color);font-weight:600">+232 77 000 123</a> or email <a href="mailto:support@salonemedconnect.sl" style="color:var(--primary-color);font-weight:600">support@salonemedconnect.sl</a> for booking assistance.
+              </p>
+            </div>
+          </div>
+
+          <!-- Form Side -->
+          <div class="appointment-form-card animate-on-scroll fade-right">
+            <h3 class="form-title">
+              <i class="fas fa-calendar-plus"></i>
+              Appointment Request Form
+            </h3>
+
+            <form id="appointment-form" novalidate>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="full-name">Full Name <span class="required">*</span></label>
+                  <input type="text" id="full-name" name="full-name" class="form-input" placeholder="e.g., Aminata Koroma" required autocomplete="name">
+                  <span class="error-message" id="full-name-error" role="alert"><i class="fas fa-exclamation-circle"></i><span></span></span>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address <span class="required">*</span></label>
+                  <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com" required autocomplete="email">
+                  <span class="error-message" id="email-error" role="alert"><i class="fas fa-exclamation-circle"></i><span></span></span>
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone Number <span class="required">*</span></label>
+                  <input type="tel" id="phone" name="phone" class="form-input" placeholder="+232 76 000 000" required autocomplete="tel">
+                  <span class="error-message" id="phone-error" role="alert"><i class="fas fa-exclamation-circle"></i><span></span></span>
+                </div>
+                <div class="form-group">
+                  <label for="preferred-doctor">Preferred Doctor <span class="required">*</span></label>
+                  <select id="preferred-doctor" name="preferred-doctor" class="form-select" required>
+                    <option value="" disabled selected>-- Select a Doctor --</option>
+                  </select>
+                  <span class="error-message" id="preferred-doctor-error" role="alert"><i class="fas fa-exclamation-circle"></i><span></span></span>
+                </div>
+                <div class="form-group">
+                  <label for="appointment-date">Preferred Date <span class="required">*</span></label>
+                  <input type="date" id="appointment-date" name="appointment-date" class="form-input" required>
+                  <span class="error-message" id="appointment-date-error" role="alert"><i class="fas fa-exclamation-circle"></i><span></span></span>
+                </div>
+                <div class="form-group">
+                  <label for="appointment-time">Preferred Time <span class="required">*</span></label>
+                  <select id="appointment-time" name="appointment-time" class="form-select" required>
+                    <option value="" disabled selected>-- Select Time --</option>
+                    <optgroup label="Morning">
+                      <option value="8:00 AM">8:00 AM</option>
+                      <option value="9:00 AM">9:00 AM</option>
+                      <option value="10:00 AM">10:00 AM</option>
+                      <option value="11:00 AM">11:00 AM</option>
+                    </optgroup>
+                    <optgroup label="Afternoon">
+                      <option value="12:00 PM">12:00 PM</option>
+                      <option value="1:00 PM">1:00 PM</option>
+                      <option value="2:00 PM">2:00 PM</option>
+                      <option value="3:00 PM">3:00 PM</option>
+                      <option value="4:00 PM">4:00 PM</option>
+                    </optgroup>
+                    <optgroup label="Evening">
+                      <option value="5:00 PM">5:00 PM</option>
+                    </optgroup>
+                  </select>
+                  <span class="error-message" id="appointment-time-error" role="alert"><i class="fas fa-exclamation-circle"></i><span></span></span>
+                </div>
+                <div class="form-group full">
+                  <label for="message">Message / Symptoms <span style="color:var(--gray-300);font-weight:400">(Optional)</span></label>
+                  <textarea id="message" name="message" class="form-textarea" placeholder="Briefly describe your symptoms or the reason for your visit..."></textarea>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary form-submit-btn btn-ripple">
+                <i class="fas fa-calendar-check"></i> Confirm Appointment
+              </button>
+              <div class="form-feedback" id="form-feedback" role="alert" aria-live="polite"></div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-main">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <div class="footer-logo-wrap"><div class="footer-logo-icon"><i class="fas fa-heartbeat"></i></div><span class="footer-brand">SaloneMedConnect</span></div>
+            <p class="footer-desc">Sierra Leone's trusted digital healthcare platform.</p>
+            <div class="footer-social">
+              <a href="#" class="footer-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="footer-social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="footer-social-link" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="../index.html" class="footer-link"><i class="fas fa-chevron-right"></i> Home</a></li>
+              <li><a href="doctors.html"  class="footer-link"><i class="fas fa-chevron-right"></i> Find Doctors</a></li>
+              <li><a href="services.html" class="footer-link"><i class="fas fa-chevron-right"></i> Services</a></li>
+              <li><a href="contact.html"  class="footer-link"><i class="fas fa-chevron-right"></i> Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <div class="footer-contact-items">
+              <div class="footer-contact-item"><i class="fas fa-phone-alt"></i><div><strong>Phone</strong><a href="tel:+23276000911" style="color:inherit">+232 76 000 911</a></div></div>
+              <div class="footer-contact-item"><i class="fas fa-envelope"></i><div><strong>Email</strong><a href="mailto:support@salonemedconnect.sl" style="color:inherit">support@salonemedconnect.sl</a></div></div>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Hours</h4>
+            <div class="footer-contact-items">
+              <div class="footer-contact-item"><i class="fas fa-clock"></i><div><strong>Mon – Fri</strong>8:00 AM – 6:00 PM</div></div>
+              <div class="footer-contact-item"><i class="fas fa-clock"></i><div><strong>Saturday</strong>9:00 AM – 2:00 PM</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="footer-copyright">&copy; <span id="footer-year">2025</span> SaloneMedConnect. All rights reserved.</p>
+        <div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-to-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+
+  <script src="../js/app.js"         defer></script>
+  <script src="../js/navbar.js"      defer></script>
+  <script src="../js/auth.js"        defer></script>
+  <script src="../js/appointment.js" defer></script>
+  <script src="../js/animations.js"  defer></script>
+  <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

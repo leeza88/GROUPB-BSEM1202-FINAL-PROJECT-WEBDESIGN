@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us – SaloneMedConnect</title>
+  <meta name="description" content="Get in touch with SaloneMedConnect. We're here to help with appointments, technical support, and any questions about our healthcare platform.">
+  <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/auth.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <div id="scroll-progress"></div>
+  <style>
+    .contact-grid { display:grid; grid-template-columns:1fr 1.5fr; gap:var(--space-10); align-items:start; }
+    .contact-info-card { background:linear-gradient(135deg,var(--primary-dark),var(--primary-color)); color:var(--white); border-radius:var(--radius-2xl); padding:var(--space-8); }
+    .contact-info-card h3 { font-family:var(--font-heading); font-size:var(--font-size-xl); font-weight:var(--font-bold); margin-bottom:var(--space-3); }
+    .contact-info-card p { color:rgba(255,255,255,0.8); font-size:var(--font-size-sm); line-height:1.7; margin-bottom:var(--space-8); }
+    .contact-info-list { display:flex; flex-direction:column; gap:var(--space-5); }
+    .contact-info-item { display:flex; gap:var(--space-4); align-items:flex-start; }
+    .contact-info-icon { width:44px; height:44px; background:rgba(255,255,255,0.15); border-radius:var(--radius-lg); display:flex; align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0; }
+    .contact-info-text strong { display:block; color:var(--white); font-weight:var(--font-semibold); font-size:var(--font-size-sm); margin-bottom:2px; }
+    .contact-info-text span { color:rgba(255,255,255,0.75); font-size:var(--font-size-xs); }
+    .contact-info-text a { color:rgba(255,255,255,0.9); }
+    .contact-social { display:flex; gap:var(--space-3); margin-top:var(--space-8); padding-top:var(--space-6); border-top:1px solid rgba(255,255,255,0.15); }
+    .contact-social a { width:38px; height:38px; background:rgba(255,255,255,0.15); border-radius:50%; display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.8); font-size:0.875rem; transition:all var(--transition-base); }
+    .contact-social a:hover { background:rgba(255,255,255,0.3); color:var(--white); transform:translateY(-2px); }
+    .contact-form-card { background:var(--off-white); border:1px solid var(--gray-100); border-radius:var(--radius-2xl); padding:var(--space-8); }
+    .map-placeholder { background:linear-gradient(135deg,#e8f4fd,#b8d9f0); border-radius:var(--radius-2xl); height:300px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:1rem; color:var(--primary-color); margin-top:var(--space-16); }
+    .map-placeholder i { font-size:2.5rem; }
+    .map-placeholder p { font-size:var(--font-size-sm); color:var(--gray-400); }
+    @media(max-width:767px) { .contact-grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <a href="tel:+23276000911" class="top-bar-item emergency"><i class="fas fa-phone-alt"></i> Emergency: +232 76 000 911</a>
+        <a href="mailto:info@salonemedconnect.sl" class="top-bar-item"><i class="fas fa-envelope"></i> info@salonemedconnect.sl</a>
+      </div>
+      <div class="top-bar-right">
+        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header>
+    <nav class="navbar" id="main-navbar">
+      <div class="container">
+        <a href="../index.html" class="navbar-logo">
+          <div class="logo-icon"><i class="fas fa-heartbeat"></i></div>
+          <div class="logo-text">
+            <span class="brand">SaloneMedConnect</span>
+            <span class="tagline">Digital Healthcare · Sierra Leone</span>
+          </div>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <ul class="navbar-menu" id="navbar-menu">
+          <li><a href="../index.html"  class="nav-link">Home</a></li>
+          <li><a href="about.html"     class="nav-link">About</a></li>
+          <li><a href="services.html"  class="nav-link">Services</a></li>
+          <li><a href="doctors.html"   class="nav-link">Doctors</a></li>
+          <li><a href="appointments.html" class="nav-link">Appointments</a></li>
+          <li><a href="contact.html"   class="nav-link active">Contact</a></li>
+        </ul>
+        <div class="navbar-actions" style="display:flex;align-items:center;gap:0.5rem">
+          <div data-auth-user style="display:none"></div>
+          <a href="login.html" data-auth-login class="btn btn-outline btn-sm"><i class="fas fa-sign-in-alt"></i> Sign In</a>
+          <a href="appointments.html" class="btn btn-primary btn-ripple"><i class="fas fa-calendar-plus"></i> Book Appointment</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="mobile-menu-overlay" id="mobile-overlay"></div>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Contact Us</h1>
+        <p>Have questions or need assistance? Our team is here to help.</p>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a>
+          <i class="fas fa-chevron-right"></i>
+          <span>Contact</span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section-padding" style="background:var(--off-white)">
+      <div class="container">
+        <div class="contact-grid">
+
+          <!-- Info -->
+          <div class="animate-on-scroll fade-left">
+            <div class="contact-info-card">
+              <h3>Get in Touch</h3>
+              <p>We're committed to providing excellent support to all our patients, doctors, and partners. Reach us through any of the channels below.</p>
+
+              <div class="contact-info-list">
+                <div class="contact-info-item">
+                  <div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                  <div class="contact-info-text">
+                    <strong>Our Address</strong>
+                    <span>12 Wilkinson Road, Aberdeen<br>Freetown, Western Area, Sierra Leone</span>
+                  </div>
+                </div>
+                <div class="contact-info-item">
+                  <div class="contact-info-icon"><i class="fas fa-phone-alt"></i></div>
+                  <div class="contact-info-text">
+                    <strong>Emergency Hotline (24/7)</strong>
+                    <span><a href="tel:+23276000911">+232 76 000 911</a></span>
+                  </div>
+                </div>
+                <div class="contact-info-item">
+                  <div class="contact-info-icon"><i class="fas fa-phone"></i></div>
+                  <div class="contact-info-text">
+                    <strong>General Enquiries</strong>
+                    <span><a href="tel:+23277000123">+232 77 000 123</a></span>
+                  </div>
+                </div>
+                <div class="contact-info-item">
+                  <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
+                  <div class="contact-info-text">
+                    <strong>General Email</strong>
+                    <span><a href="mailto:info@salonemedconnect.sl">info@salonemedconnect.sl</a></span>
+                  </div>
+                </div>
+                <div class="contact-info-item">
+                  <div class="contact-info-icon"><i class="fas fa-headset"></i></div>
+                  <div class="contact-info-text">
+                    <strong>Technical Support</strong>
+                    <span><a href="mailto:support@salonemedconnect.sl">support@salonemedconnect.sl</a></span>
+                  </div>
+                </div>
+                <div class="contact-info-item">
+                  <div class="contact-info-icon"><i class="fas fa-clock"></i></div>
+                  <div class="contact-info-text">
+                    <strong>Office Hours</strong>
+                    <span>Mon – Fri: 8:00 AM – 6:00 PM<br>Saturday: 9:00 AM – 2:00 PM</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-social">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="contact-form-card animate-on-scroll fade-right">
+            <h3 class="form-title"><i class="fas fa-paper-plane"></i> Send Us a Message</h3>
+
+            <form id="contact-form" novalidate aria-label="Contact form">
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="contact-name">Full Name <span class="required">*</span></label>
+                  <input type="text" id="contact-name" name="name" class="form-input" placeholder="Your full name" required autocomplete="name">
+                  <span class="error-message" id="contact-name-error" role="alert"><i class="fas fa-exclamation-circle"></i><span></span></span>
+                </div>
+                <div class="form-group">
+                  <label for="contact-email">Email Address <span class="required">*</span></label>
+                  <input type="email" id="contact-email" name="email" class="form-input" placeholder="your@email.com" required autocomplete="email">
+                  <span class="error-message" id="contact-email-error" role="alert"><i class="fas fa-exclamation-circle"></i><span></span></span>
+                </div>
+                <div class="form-group">
+                  <label for="contact-phone">Phone Number</label>
+                  <input type="tel" id="contact-phone" name="phone" class="form-input" placeholder="+232 76 000 000" autocomplete="tel">
+                </div>
+                <div class="form-group">
+                  <label for="contact-subject">Subject <span class="required">*</span></label>
+                  <select id="contact-subject" name="subject" class="form-select" required>
+                    <option value="" disabled selected>-- Select Subject --</option>
+                    <option>Appointment Enquiry</option>
+                    <option>Doctor Registration</option>
+                    <option>Technical Support</option>
+                    <option>Partnership / Collaboration</option>
+                    <option>Media & Press</option>
+                    <option>Billing & Payments</option>
+                    <option>General Feedback</option>
+                    <option>Other</option>
+                  </select>
+                  <span class="error-message" id="contact-subject-error" role="alert"><i class="fas fa-exclamation-circle"></i><span></span></span>
+                </div>
+                <div class="form-group full">
+                  <label for="contact-message">Message <span class="required">*</span></label>
+                  <textarea id="contact-message" name="message" class="form-textarea" placeholder="How can we help you? Please provide as much detail as possible." rows="5" required></textarea>
+                  <span class="error-message" id="contact-message-error" role="alert"><i class="fas fa-exclamation-circle"></i><span></span></span>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary form-submit-btn btn-ripple">
+                <i class="fas fa-paper-plane"></i> Send Message
+              </button>
+
+              <div class="form-feedback" id="contact-feedback" role="alert" aria-live="polite"></div>
+            </form>
+          </div>
+
+        </div>
+
+        <!-- Map Placeholder -->
+        <div class="map-placeholder animate-on-scroll fade-up">
+          <i class="fas fa-map-marked-alt"></i>
+          <h4 style="font-family:var(--font-heading);font-weight:var(--font-semibold);color:var(--primary-dark)">12 Wilkinson Road, Aberdeen, Freetown</h4>
+          <p>Interactive map will be integrated with Google Maps API</p>
+          <a href="https://maps.google.com/?q=Freetown,Sierra+Leone" target="_blank" rel="noopener" class="btn btn-outline btn-sm"><i class="fas fa-external-link-alt"></i> View on Google Maps</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-main">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <div class="footer-logo-wrap"><div class="footer-logo-icon"><i class="fas fa-heartbeat"></i></div><span class="footer-brand">SaloneMedConnect</span></div>
+            <p class="footer-desc">Sierra Leone's trusted digital healthcare platform.</p>
+            <div class="footer-social">
+              <a href="#" class="footer-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="footer-social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="footer-social-link" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+            </div>
+          </div>
+          <div class="footer-col"><h4>Quick Links</h4><ul class="footer-links">
+            <li><a href="../index.html" class="footer-link"><i class="fas fa-chevron-right"></i> Home</a></li>
+            <li><a href="about.html"    class="footer-link"><i class="fas fa-chevron-right"></i> About</a></li>
+            <li><a href="services.html" class="footer-link"><i class="fas fa-chevron-right"></i> Services</a></li>
+            <li><a href="doctors.html"  class="footer-link"><i class="fas fa-chevron-right"></i> Doctors</a></li>
+            <li><a href="appointments.html" class="footer-link"><i class="fas fa-chevron-right"></i> Appointments</a></li>
+          </ul></div>
+          <div class="footer-col"><h4>Contact Info</h4><div class="footer-contact-items">
+            <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><div><strong>Address</strong>12 Wilkinson Road, Freetown, Sierra Leone</div></div>
+            <div class="footer-contact-item"><i class="fas fa-phone-alt"></i><div><strong>Phone</strong><a href="tel:+23276000911" style="color:inherit">+232 76 000 911</a></div></div>
+            <div class="footer-contact-item"><i class="fas fa-envelope"></i><div><strong>Email</strong><a href="mailto:info@salonemedconnect.sl" style="color:inherit">info@salonemedconnect.sl</a></div></div>
+          </div></div>
+          <div class="footer-col"><h4>Office Hours</h4><div class="footer-contact-items">
+            <div class="footer-contact-item"><i class="fas fa-clock"></i><div><strong>Mon – Fri</strong>8:00 AM – 6:00 PM</div></div>
+            <div class="footer-contact-item"><i class="fas fa-clock"></i><div><strong>Saturday</strong>9:00 AM – 2:00 PM</div></div>
+            <div class="footer-contact-item"><i class="fas fa-ambulance"></i><div><strong>Emergency</strong>24/7 Hotline Available</div></div>
+          </div></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="footer-copyright">&copy; <span id="footer-year">2025</span> SaloneMedConnect. All rights reserved.</p>
+        <div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-to-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+
+  <script src="../js/app.js"        defer></script>
+  <script src="../js/navbar.js"     defer></script>
+  <script src="../js/auth.js"       defer></script>
+  <script src="../js/animations.js" defer></script>
+  <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+
+  <script defer>
+  // Contact form validation
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contact-form');
+    if (!form) return;
+
+    const rules = {
+      'contact-name':    { required:true, minLength:3 },
+      'contact-email':   { required:true, pattern:/^[^\s@]+@[^\s@]+\.[^\s@]+$/ },
+      'contact-subject': { required:true },
+      'contact-message': { required:true, minLength:10 }
+    };
+
+    function validate(id) {
+      const el  = form.querySelector('#' + id);
+      const err = form.querySelector('#' + id + '-error');
+      const r   = rules[id];
+      if (!el || !r) return true;
+      const val = el.value.trim();
+      let ok = true, msg = '';
+      if (r.required && !val) { ok = false; msg = 'This field is required.'; }
+      else if (val && r.minLength && val.length < r.minLength) { ok = false; msg = `Minimum ${r.minLength} characters required.`; }
+      else if (val && r.pattern && !r.pattern.test(val)) { ok = false; msg = 'Please enter a valid email.'; }
+      el.classList.toggle('error', !ok);
+      if (err) { err.querySelector('span').textContent = msg; err.classList.toggle('show', !ok); }
+      return ok;
+    }
+
+    Object.keys(rules).forEach(id => {
+      const el = form.querySelector('#' + id);
+      if (el) { el.addEventListener('blur', () => validate(id)); el.addEventListener('input', () => { if (el.classList.contains('error')) validate(id); }); }
+    });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const valid = Object.keys(rules).every(validate);
+      if (!valid) return;
+
+      const btn = form.querySelector('button[type=submit]');
+      const fb  = form.querySelector('.form-feedback');
+      const orig = btn.innerHTML;
+      btn.innerHTML = '<i class="fas fa-spinner anim-spin"></i> Sending...';
+      btn.disabled = true;
+
+      await new Promise(r => setTimeout(r, 1600));
+
+      fb.className = 'form-feedback success';
+      fb.innerHTML = '<i class="fas fa-check-circle" style="font-size:1.5rem;flex-shrink:0"></i><div><strong>Message Sent!</strong><br>Thank you for contacting us. We\'ll respond within 24 hours.</div>';
+      form.reset();
+      btn.innerHTML = orig;
+      btn.disabled = false;
+      if (window.App) App.showToast('Your message has been sent successfully!', 'success');
+    });
+  });
+  </script>
+
+</body>
+</html>

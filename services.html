@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services – SaloneMedConnect</title>
+  <meta name="description" content="Explore SaloneMedConnect's comprehensive healthcare services including general consultation, specialist referrals, appointment booking, lab tests, and medicine information.">
+  <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/auth.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <div id="scroll-progress"></div>
+  <style>
+    .services-hero-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-6); }
+    .service-detail { background:var(--white); border:1px solid var(--gray-100); border-radius:var(--radius-2xl); padding:var(--space-8); transition:all var(--transition-base); }
+    .service-detail:hover { transform:translateY(-5px); box-shadow:var(--shadow-xl); }
+    .service-detail-icon { width:64px; height:64px; border-radius:var(--radius-xl); display:flex; align-items:center; justify-content:center; font-size:1.75rem; margin-bottom:var(--space-5); }
+    .service-detail h3 { font-family:var(--font-heading); font-weight:var(--font-semibold); font-size:var(--font-size-lg); color:var(--gray-700); margin-bottom:var(--space-3); }
+    .service-detail p { font-size:var(--font-size-sm); color:var(--gray-400); line-height:1.75; margin-bottom:var(--space-5); }
+    .service-features { list-style:none; display:flex; flex-direction:column; gap:var(--space-2); }
+    .service-features li { font-size:var(--font-size-sm); color:var(--gray-500); display:flex; align-items:center; gap:var(--space-2); }
+    .service-features li::before { content:''; width:6px; height:6px; background:var(--primary-color); border-radius:50%; flex-shrink:0; }
+    @media(max-width:1023px) { .services-hero-grid { grid-template-columns:repeat(2,1fr); } }
+    @media(max-width:639px)  { .services-hero-grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <a href="tel:+23276000911" class="top-bar-item emergency"><i class="fas fa-phone-alt"></i> Emergency: +232 76 000 911</a>
+        <a href="mailto:info@salonemedconnect.sl" class="top-bar-item"><i class="fas fa-envelope"></i> info@salonemedconnect.sl</a>
+      </div>
+      <div class="top-bar-right">
+        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header>
+    <nav class="navbar" id="main-navbar">
+      <div class="container">
+        <a href="../index.html" class="navbar-logo">
+          <div class="logo-icon"><i class="fas fa-heartbeat"></i></div>
+          <div class="logo-text">
+            <span class="brand">SaloneMedConnect</span>
+            <span class="tagline">Digital Healthcare · Sierra Leone</span>
+          </div>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <ul class="navbar-menu" id="navbar-menu">
+          <li><a href="../index.html"  class="nav-link">Home</a></li>
+          <li><a href="about.html"     class="nav-link">About</a></li>
+          <li><a href="services.html"  class="nav-link active">Services</a></li>
+          <li><a href="doctors.html"   class="nav-link">Doctors</a></li>
+          <li><a href="appointments.html" class="nav-link">Appointments</a></li>
+          <li><a href="contact.html"   class="nav-link">Contact</a></li>
+        </ul>
+        <div class="navbar-actions" style="display:flex;align-items:center;gap:0.5rem">
+          <div data-auth-user style="display:none"></div>
+          <a href="login.html" data-auth-login class="btn btn-outline btn-sm"><i class="fas fa-sign-in-alt"></i> Sign In</a>
+          <a href="appointments.html" class="btn btn-primary btn-ripple"><i class="fas fa-calendar-plus"></i> Book Appointment</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="mobile-menu-overlay" id="mobile-overlay"></div>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Our Healthcare Services</h1>
+        <p>Comprehensive digital health services tailored for Sierra Leone — accessible, trusted, and designed around you.</p>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a>
+          <i class="fas fa-chevron-right"></i>
+          <span>Services</span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- SERVICES GRID -->
+    <section class="section-padding" style="background:var(--off-white)" id="all-services">
+      <div class="container">
+        <div class="section-header animate-on-scroll fade-up">
+          <span class="section-badge">What We Offer</span>
+          <h2 class="section-title">Complete <span>Healthcare Solutions</span></h2>
+          <div class="divider"></div>
+          <p class="section-subtitle">From everyday health concerns to specialist referrals, we provide the tools and connections Sierra Leoneans need to manage their health.</p>
+        </div>
+
+        <div class="services-hero-grid">
+
+          <div class="service-detail animate-on-scroll fade-up" id="consultation">
+            <div class="service-detail-icon" style="background:var(--primary-lighter)"><i class="fas fa-stethoscope" style="color:var(--primary-color)"></i></div>
+            <h3>General Consultation</h3>
+            <p>Connect with experienced general practitioners for comprehensive health assessments, diagnosis, and personalized treatment plans from the comfort of your location.</p>
+            <ul class="service-features">
+              <li>Online & In-Person Consultations</li>
+              <li>Same-Day Appointment Options</li>
+              <li>Follow-up Care Coordination</li>
+              <li>Electronic Prescription Services</li>
+              <li>Chronic Disease Management</li>
+            </ul>
+          </div>
+
+          <div class="service-detail animate-on-scroll fade-up">
+            <div class="service-detail-icon" style="background:rgba(0,191,165,0.1)"><i class="fas fa-user-md" style="color:var(--secondary-color)"></i></div>
+            <h3>Find Specialist Doctors</h3>
+            <p>Browse our growing network of verified specialists across all major medical disciplines. Filter by location, availability, language, and hospital affiliation.</p>
+            <ul class="service-features">
+              <li>150+ Verified Specialists</li>
+              <li>SLMDC Licensed Professionals</li>
+              <li>Patient Reviews & Ratings</li>
+              <li>Multilingual Support (English, Krio, Temne, Mende)</li>
+              <li>Real-Time Availability Calendar</li>
+            </ul>
+          </div>
+
+          <div class="service-detail animate-on-scroll fade-up">
+            <div class="service-detail-icon" style="background:rgba(124,58,237,0.1)"><i class="fas fa-calendar-check" style="color:#7c3aed"></i></div>
+            <h3>Appointment Booking</h3>
+            <p>Book appointments seamlessly 24/7. Receive instant confirmation via SMS and email, plus smart reminders to ensure you never miss an appointment.</p>
+            <ul class="service-features">
+              <li>24/7 Online Booking</li>
+              <li>Instant SMS & Email Confirmation</li>
+              <li>Appointment Reminders</li>
+              <li>Easy Rescheduling & Cancellation</li>
+              <li>No Hidden Booking Fees</li>
+            </ul>
+          </div>
+
+          <div class="service-detail animate-on-scroll fade-up" id="medicine">
+            <div class="service-detail-icon" style="background:rgba(220,38,38,0.1)"><i class="fas fa-pills" style="color:#dc2626"></i></div>
+            <h3>Medicine Information</h3>
+            <p>Access Sierra Leone's most comprehensive medicine database. Verify medications, check dosages, understand side effects, and find local pharmacies that stock your prescriptions.</p>
+            <ul class="service-features">
+              <li>Comprehensive Drug Database</li>
+              <li>Dosage & Administration Guides</li>
+              <li>Drug Interaction Checker</li>
+              <li>Local Pharmacy Finder</li>
+              <li>Generic Alternatives Information</li>
+            </ul>
+          </div>
+
+          <div class="service-detail animate-on-scroll fade-up" id="lab">
+            <div class="service-detail-icon" style="background:rgba(245,158,11,0.1)"><i class="fas fa-flask" style="color:#f59e0b"></i></div>
+            <h3>Lab & Diagnostics</h3>
+            <p>Book diagnostic tests and laboratory services at our partner facilities across Sierra Leone. Receive results digitally and share them directly with your doctor.</p>
+            <ul class="service-features">
+              <li>Blood & Urine Tests</li>
+              <li>Imaging (X-Ray, Ultrasound, MRI)</li>
+              <li>Digital Test Results</li>
+              <li>Certified & Accredited Labs</li>
+              <li>Home Sample Collection (select areas)</li>
+            </ul>
+          </div>
+
+          <div class="service-detail animate-on-scroll fade-up" id="emergency">
+            <div class="service-detail-icon" style="background:rgba(239,68,68,0.1)"><i class="fas fa-ambulance" style="color:#ef4444"></i></div>
+            <h3>Emergency Services</h3>
+            <p>24/7 emergency guidance and hotline access. Get connected to the nearest emergency medical facility and receive triage guidance while help is on the way.</p>
+            <ul class="service-features">
+              <li>24/7 Emergency Hotline</li>
+              <li>GPS-Based Facility Finder</li>
+              <li>Emergency Triage Guidance</li>
+              <li>Crisis & Mental Health Support</li>
+              <li>Ambulance Coordination</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- COMING SOON -->
+    <section class="section-padding" style="background:var(--white)">
+      <div class="container">
+        <div class="section-header animate-on-scroll fade-up">
+          <span class="section-badge" style="background:rgba(124,58,237,0.1);color:#7c3aed">Coming Soon</span>
+          <h2 class="section-title">Future <span>Features</span></h2>
+          <div class="divider"></div>
+          <p class="section-subtitle">We're constantly innovating to bring more healthcare solutions to Sierra Leone. Here's what's coming next.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem">
+          <div style="background:var(--off-white);border-radius:var(--radius-xl);padding:var(--space-6);text-align:center" class="animate-on-scroll fade-up">
+            <div style="width:56px;height:56px;background:rgba(124,58,237,0.1);border-radius:var(--radius-xl);display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-4);font-size:1.5rem;color:#7c3aed"><i class="fas fa-video"></i></div>
+            <h4 style="font-family:var(--font-heading);font-weight:var(--font-semibold);color:var(--gray-700);margin-bottom:var(--space-2)">Video Consultations</h4>
+            <p style="font-size:var(--font-size-xs);color:var(--gray-400)">Consult doctors face-to-face from anywhere via secure video calls.</p>
+          </div>
+          <div style="background:var(--off-white);border-radius:var(--radius-xl);padding:var(--space-6);text-align:center" class="animate-on-scroll fade-up">
+            <div style="width:56px;height:56px;background:rgba(0,191,165,0.1);border-radius:var(--radius-xl);display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-4);font-size:1.5rem;color:var(--secondary-color)"><i class="fas fa-comments"></i></div>
+            <h4 style="font-family:var(--font-heading);font-weight:var(--font-semibold);color:var(--gray-700);margin-bottom:var(--space-2)">Live Chat</h4>
+            <p style="font-size:var(--font-size-xs);color:var(--gray-400)">Instant messaging with healthcare providers for quick medical advice.</p>
+          </div>
+          <div style="background:var(--off-white);border-radius:var(--radius-xl);padding:var(--space-6);text-align:center" class="animate-on-scroll fade-up">
+            <div style="width:56px;height:56px;background:rgba(10,110,189,0.1);border-radius:var(--radius-xl);display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-4);font-size:1.5rem;color:var(--primary-color)"><i class="fas fa-user-circle"></i></div>
+            <h4 style="font-family:var(--font-heading);font-weight:var(--font-semibold);color:var(--gray-700);margin-bottom:var(--space-2)">Patient Dashboard</h4>
+            <p style="font-size:var(--font-size-xs);color:var(--gray-400)">Manage your health records, appointments, and prescriptions in one place.</p>
+          </div>
+          <div style="background:var(--off-white);border-radius:var(--radius-xl);padding:var(--space-6);text-align:center" class="animate-on-scroll fade-up">
+            <div style="width:56px;height:56px;background:rgba(245,158,11,0.1);border-radius:var(--radius-xl);display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-4);font-size:1.5rem;color:#f59e0b"><i class="fas fa-credit-card"></i></div>
+            <h4 style="font-family:var(--font-heading);font-weight:var(--font-semibold);color:var(--gray-700);margin-bottom:var(--space-2)">Online Payments</h4>
+            <p style="font-size:var(--font-size-xs);color:var(--gray-400)">Pay for consultations securely online via mobile money and card payments.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section style="background:linear-gradient(135deg,var(--primary-dark),var(--primary-color));padding:var(--space-16) 0;text-align:center">
+      <div class="container">
+        <h2 style="font-family:var(--font-heading);font-size:var(--font-size-3xl);font-weight:var(--font-bold);color:var(--white);margin-bottom:1rem">Start Your Health Journey Today</h2>
+        <p style="color:rgba(255,255,255,0.8);margin-bottom:2rem">Book an appointment with a verified doctor in just a few minutes.</p>
+        <a href="appointments.html" class="btn btn-white btn-lg btn-ripple"><i class="fas fa-calendar-check"></i> Book Appointment Now</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-main">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <div class="footer-logo-wrap"><div class="footer-logo-icon"><i class="fas fa-heartbeat"></i></div><span class="footer-brand">SaloneMedConnect</span></div>
+            <p class="footer-desc">Sierra Leone's trusted digital healthcare platform.</p>
+            <div class="footer-social">
+              <a href="#" class="footer-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="footer-social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="footer-social-link" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+            </div>
+          </div>
+          <div class="footer-col"><h4>Quick Links</h4><ul class="footer-links">
+            <li><a href="../index.html" class="footer-link"><i class="fas fa-chevron-right"></i> Home</a></li>
+            <li><a href="about.html"    class="footer-link"><i class="fas fa-chevron-right"></i> About</a></li>
+            <li><a href="services.html" class="footer-link"><i class="fas fa-chevron-right"></i> Services</a></li>
+            <li><a href="doctors.html"  class="footer-link"><i class="fas fa-chevron-right"></i> Doctors</a></li>
+            <li><a href="appointments.html" class="footer-link"><i class="fas fa-chevron-right"></i> Book Appointment</a></li>
+          </ul></div>
+          <div class="footer-col"><h4>Services</h4><ul class="footer-links">
+            <li><a href="services.html#consultation" class="footer-link"><i class="fas fa-chevron-right"></i> General Consultation</a></li>
+            <li><a href="services.html#medicine"     class="footer-link"><i class="fas fa-chevron-right"></i> Medicine Info</a></li>
+            <li><a href="services.html#lab"          class="footer-link"><i class="fas fa-chevron-right"></i> Lab & Diagnostics</a></li>
+            <li><a href="services.html#emergency"    class="footer-link"><i class="fas fa-chevron-right"></i> Emergency Services</a></li>
+          </ul></div>
+          <div class="footer-col"><h4>Contact</h4><div class="footer-contact-items">
+            <div class="footer-contact-item"><i class="fas fa-phone-alt"></i><div><strong>Phone</strong><a href="tel:+23276000911" style="color:inherit">+232 76 000 911</a></div></div>
+            <div class="footer-contact-item"><i class="fas fa-envelope"></i><div><strong>Email</strong><a href="mailto:info@salonemedconnect.sl" style="color:inherit">info@salonemedconnect.sl</a></div></div>
+          </div></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="footer-copyright">&copy; <span id="footer-year">2025</span> SaloneMedConnect. All rights reserved.</p>
+        <div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-to-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+
+  <script src="../js/app.js"        defer></script>
+  <script src="../js/navbar.js"     defer></script>
+  <script src="../js/auth.js"       defer></script>
+  <script src="../js/animations.js" defer></script>
+  <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account – SaloneMedConnect</title>
+  <meta name="description" content="Create your free SaloneMedConnect account to book appointments, manage your health, and connect with Sierra Leone's best doctors from any device.">
+  <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/auth.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+<div class="auth-page" style="padding:1.5rem 1rem">
+  <div class="auth-card" style="max-width:520px">
+
+    <!-- Logo -->
+    <div class="auth-logo">
+      <a href="../index.html">
+        <div class="auth-logo-icon"><i class="fas fa-heartbeat"></i></div>
+        <span class="brand-name">SaloneMedConnect</span>
+        <span class="brand-sub">Digital Healthcare · Sierra Leone</span>
+      </a>
+    </div>
+
+    <h1 class="auth-title">Create Your Account</h1>
+    <p class="auth-subtitle">Join thousands of Sierra Leoneans accessing better healthcare. Free to sign up.</p>
+
+    <!-- Alert -->
+    <div class="auth-alert" id="auth-alert" role="alert" aria-live="polite">
+      <i class="fas fa-info-circle"></i>
+      <span id="auth-alert-msg"></span>
+    </div>
+
+    <form class="auth-form" id="signup-form" novalidate>
+
+      <div class="form-grid-2">
+        <div class="form-group">
+          <label for="su-firstname">First Name <span class="required">*</span></label>
+          <div class="input-icon-wrap">
+            <i class="fas fa-user input-icon"></i>
+            <input type="text" id="su-firstname" class="form-input" placeholder="Aminata" autocomplete="given-name" required>
+          </div>
+          <span class="error-message" id="su-firstname-error" role="alert"><i class="fas fa-exclamation-circle"></i><span></span></span>
+        </div>
+        <div class="form-group">
+          <label for="su-lastname">Last Name <span class="required">*</span></label>
+          <div class="input-icon-wrap">
+            <i class="fas fa-user input-icon"></i>
+            <input type="text" id="su-lastname" class="form-input" placeholder="Koroma" autocomplete="family-name" required>
+          </div>
+          <span class="error-message" id="su-lastname-error" role="alert"><i class="fas fa-exclamation-circle"></i><span></span></span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="su-email">Email Address <span class="required">*</span></label>
+        <div class="input-icon-wrap">
+          <i class="fas fa-envelope input-icon"></i>
+          <input type="email" id="su-email" class="form-input" placeholder="your@email.com" autocomplete="email" required>
+        </div>
+        <span class="error-message" id="su-email-error" role="alert"><i class="fas fa-exclamation-circle"></i><span></span></span>
+      </div>
+
+      <div class="form-group">
+        <label for="su-phone">Phone Number <span class="required">*</span></label>
+        <div class="input-icon-wrap">
+          <i class="fas fa-phone input-icon"></i>
+          <input type="tel" id="su-phone" class="form-input" placeholder="+232 76 000 000" autocomplete="tel" required>
+        </div>
+        <span class="error-message" id="su-phone-error" role="alert"><i class="fas fa-exclamation-circle"></i><span></span></span>
+      </div>
+
+      <div class="form-grid-2">
+        <div class="form-group">
+          <label for="su-dob">Date of Birth</label>
+          <div class="input-icon-wrap">
+            <i class="fas fa-calendar input-icon"></i>
+            <input type="date" id="su-dob" class="form-input" autocomplete="bday">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="su-gender">Gender</label>
+          <select id="su-gender" class="form-select">
+            <option value="">-- Select --</option>
+            <option value="Female">Female</option>
+            <option value="Male">Male</option>
+            <option value="Other">Other</option>
+            <option value="Prefer not to say">Prefer not to say</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="su-password">Password <span class="required">*</span></label>
+        <div class="input-icon-wrap">
+          <i class="fas fa-lock input-icon"></i>
+          <input type="password" id="su-password" class="form-input"
+            placeholder="At least 8 characters" autocomplete="new-password" required>
+          <button type="button" class="password-toggle" id="toggle-pw1" aria-label="Toggle password">
+            <i class="fas fa-eye"></i>
+          </button>
+        </div>
+        <span class="error-message" id="su-password-error" role="alert"><i class="fas fa-exclamation-circle"></i><span></span></span>
+        <!-- Password strength -->
+        <div id="pw-strength" style="margin-top:0.5rem;display:none">
+          <div style="height:4px;background:var(--gray-100);border-radius:4px;overflow:hidden">
+            <div id="pw-bar" style="height:100%;width:0;transition:width 0.3s,background 0.3s;border-radius:4px"></div>
+          </div>
+          <span id="pw-label" style="font-size:11px;color:var(--gray-400);margin-top:3px;display:block"></span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="su-confirm">Confirm Password <span class="required">*</span></label>
+        <div class="input-icon-wrap">
+          <i class="fas fa-lock input-icon"></i>
+          <input type="password" id="su-confirm" class="form-input"
+            placeholder="Repeat your password" autocomplete="new-password" required>
+          <button type="button" class="password-toggle" id="toggle-pw2" aria-label="Toggle password">
+            <i class="fas fa-eye"></i>
+          </button>
+        </div>
+        <span class="error-message" id="su-confirm-error" role="alert"><i class="fas fa-exclamation-circle"></i><span></span></span>
+      </div>
+
+      <div class="terms-check">
+        <input type="checkbox" id="su-terms" required>
+        <label for="su-terms">
+          I agree to the <a href="#" target="_blank">Terms of Service</a> and
+          <a href="#" target="_blank">Privacy Policy</a>. I understand SaloneMedConnect uses my data to provide healthcare services.
+        </label>
+      </div>
+      <span class="error-message" id="su-terms-error" role="alert"><i class="fas fa-exclamation-circle"></i><span></span></span>
+
+      <button type="submit" class="btn btn-primary auth-submit btn-ripple" id="signup-btn" style="margin-top:1rem">
+        <i class="fas fa-user-plus"></i> Create Account
+      </button>
+
+    </form>
+
+    <div class="auth-switch">
+      Already have an account? <a href="login.html">Sign in</a>
+    </div>
+
+    <div style="text-align:center;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--gray-100)">
+      <a href="../index.html" style="font-size:var(--font-size-xs);color:var(--gray-400)">
+        <i class="fas fa-arrow-left"></i> Back to SaloneMedConnect
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<script src="../js/auth.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  if (Auth.isLoggedIn()) { window.location.href = 'dashboard.html'; return; }
+
+  const form     = document.getElementById('signup-form');
+  const alert    = document.getElementById('auth-alert');
+  const alertMsg = document.getElementById('auth-alert-msg');
+  const btn      = document.getElementById('signup-btn');
+
+  // Password toggles
+  [['toggle-pw1','su-password'],['toggle-pw2','su-confirm']].forEach(([btnId, inputId]) => {
+    document.getElementById(btnId).addEventListener('click', function() {
+      const input = document.getElementById(inputId);
+      const isText = input.type === 'text';
+      input.type = isText ? 'password' : 'text';
+      this.querySelector('i').className = isText ? 'fas fa-eye' : 'fas fa-eye-slash';
+    });
+  });
+
+  // Password strength meter
+  document.getElementById('su-password').addEventListener('input', function() {
+    const val = this.value;
+    const bar   = document.getElementById('pw-bar');
+    const label = document.getElementById('pw-label');
+    const wrap  = document.getElementById('pw-strength');
+    if (!val) { wrap.style.display = 'none'; return; }
+    wrap.style.display = 'block';
+    let score = 0;
+    if (val.length >= 8)   score++;
+    if (/[A-Z]/.test(val)) score++;
+    if (/[0-9]/.test(val)) score++;
+    if (/[^A-Za-z0-9]/.test(val)) score++;
+    const levels = [
+      { w:'25%',  bg:'#ef4444', text:'Weak' },
+      { w:'50%',  bg:'#f59e0b', text:'Fair' },
+      { w:'75%',  bg:'#3b82f6', text:'Good' },
+      { w:'100%', bg:'#10b981', text:'Strong' }
+    ];
+    const level = levels[score - 1] || levels[0];
+    bar.style.width = level.w;
+    bar.style.background = level.bg;
+    label.textContent = level.text;
+    label.style.color = level.bg;
+  });
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    clearErrors();
+
+    const firstName = document.getElementById('su-firstname').value.trim();
+    const lastName  = document.getElementById('su-lastname').value.trim();
+    const email     = document.getElementById('su-email').value.trim();
+    const phone     = document.getElementById('su-phone').value.trim();
+    const dob       = document.getElementById('su-dob').value;
+    const gender    = document.getElementById('su-gender').value;
+    const password  = document.getElementById('su-password').value;
+    const confirm   = document.getElementById('su-confirm').value;
+    const terms     = document.getElementById('su-terms').checked;
+    let valid = true;
+
+    if (!firstName || firstName.length < 2) { showFieldError('su-firstname', 'First name required (min 2 chars).'); valid = false; }
+    if (!lastName  || lastName.length < 2)  { showFieldError('su-lastname',  'Last name required (min 2 chars).');  valid = false; }
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showFieldError('su-email', 'Valid email required.'); valid = false; }
+    if (!phone || !/^[\+]?[\d\s\-\(\)]{8,15}$/.test(phone))  { showFieldError('su-phone', 'Valid phone number required.'); valid = false; }
+    if (!password || password.length < 8)   { showFieldError('su-password', 'Password must be at least 8 characters.'); valid = false; }
+    if (password !== confirm)               { showFieldError('su-confirm', 'Passwords do not match.'); valid = false; }
+    if (!terms) { showFieldError('su-terms', 'You must agree to the Terms of Service.'); valid = false; }
+    if (!valid) return;
+
+    const orig = btn.innerHTML;
+    btn.innerHTML = '<i class="fas fa-spinner anim-spin"></i> Creating account...';
+    btn.disabled = true;
+
+    await new Promise(r => setTimeout(r, 1000));
+
+    const result = Auth.register({
+      fullName: `${firstName} ${lastName}`,
+      email, phone, password, dob, gender
+    });
+
+    btn.innerHTML = orig;
+    btn.disabled = false;
+
+    if (result.success) {
+      showAlert(`Welcome to SaloneMedConnect, ${firstName}! Redirecting to your dashboard...`, 'success');
+      setTimeout(() => { window.location.href = 'dashboard.html'; }, 1500);
+    } else {
+      showAlert(result.message, 'error');
+    }
+  });
+
+  function showAlert(msg, type) {
+    alertMsg.textContent = msg;
+    alert.className = `auth-alert ${type} show`;
+    alert.querySelector('i').className = type === 'success' ? 'fas fa-check-circle' : 'fas fa-times-circle';
+  }
+
+  function showFieldError(id, msg) {
+    const el  = document.getElementById(id);
+    const err = document.getElementById(id + '-error');
+    el?.classList.add('error');
+    if (err) { err.querySelector('span').textContent = msg; err.classList.add('show'); }
+  }
+
+  function clearErrors() {
+    document.querySelectorAll('.form-input.error, .form-select.error').forEach(el => el.classList.remove('error'));
+    document.querySelectorAll('.error-message.show').forEach(el => el.classList.remove('show'));
+    alert.className = 'auth-alert';
+  }
+});
+</script>
+</body>
+</html>

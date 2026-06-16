@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us – SaloneMedConnect</title>
+  <meta name="description" content="Learn about SaloneMedConnect's mission to connect Sierra Leone to better healthcare through digital innovation and trusted medical professionals.">
+  <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/auth.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <div id="scroll-progress"></div>
+  <style>
+    .mission-grid { display:grid; grid-template-columns:1fr 1fr; gap:var(--space-16); align-items:center; }
+    .team-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-6); }
+    .team-card { background:var(--white); border:1px solid var(--gray-100); border-radius:var(--radius-2xl); padding:var(--space-8); text-align:center; transition:all var(--transition-base); }
+    .team-card:hover { transform:translateY(-5px); box-shadow:var(--shadow-xl); }
+    .team-avatar { width:80px; height:80px; background:linear-gradient(135deg,var(--primary-color),var(--secondary-color)); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto var(--space-4); color:var(--white); font-size:1.5rem; font-weight:700; font-family:var(--font-heading); }
+    .team-card h4 { font-family:var(--font-heading); font-weight:var(--font-semibold); color:var(--gray-700); margin-bottom:4px; }
+    .team-card p { font-size:var(--font-size-sm); color:var(--primary-color); font-weight:var(--font-medium); margin-bottom:var(--space-3); }
+    .team-card span { font-size:var(--font-size-xs); color:var(--gray-400); }
+    .timeline { position:relative; padding-left:2rem; }
+    .timeline::before { content:''; position:absolute; left:0; top:0; bottom:0; width:2px; background:linear-gradient(180deg,var(--primary-color),var(--secondary-color)); }
+    .timeline-item { position:relative; margin-bottom:var(--space-8); }
+    .timeline-dot { position:absolute; left:-2.375rem; top:4px; width:14px; height:14px; background:var(--primary-color); border-radius:50%; border:3px solid var(--white); box-shadow:0 0 0 2px var(--primary-color); }
+    .timeline-item h4 { font-family:var(--font-heading); font-weight:var(--font-semibold); color:var(--gray-700); margin-bottom:4px; }
+    .timeline-item .year { font-size:var(--font-size-xs); color:var(--primary-color); font-weight:var(--font-semibold); margin-bottom:var(--space-2); display:block; }
+    .timeline-item p { font-size:var(--font-size-sm); color:var(--gray-400); line-height:1.7; }
+    @media(max-width:767px) { .mission-grid,.team-grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <a href="tel:+23276000911" class="top-bar-item emergency"><i class="fas fa-phone-alt"></i> Emergency: +232 76 000 911</a>
+        <a href="mailto:info@salonemedconnect.sl" class="top-bar-item"><i class="fas fa-envelope"></i> info@salonemedconnect.sl</a>
+      </div>
+      <div class="top-bar-right">
+        <a href="https://facebook.com/salonemedconnect"  class="social-link" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://instagram.com/salonemedconnect" class="social-link" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com/salonemedconnect"   class="social-link" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://linkedin.com/company/salonemedconnect" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header>
+    <nav class="navbar" id="main-navbar">
+      <div class="container">
+        <a href="../index.html" class="navbar-logo">
+          <div class="logo-icon"><i class="fas fa-heartbeat"></i></div>
+          <div class="logo-text">
+            <span class="brand">SaloneMedConnect</span>
+            <span class="tagline">Digital Healthcare · Sierra Leone</span>
+          </div>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="navbar-menu" id="navbar-menu">
+          <li><a href="../index.html"   class="nav-link">Home</a></li>
+          <li><a href="about.html"      class="nav-link active">About</a></li>
+          <li><a href="services.html"   class="nav-link">Services</a></li>
+          <li><a href="doctors.html"    class="nav-link">Doctors</a></li>
+          <li><a href="appointments.html" class="nav-link">Appointments</a></li>
+          <li><a href="contact.html"    class="nav-link">Contact</a></li>
+        </ul>
+        <div class="navbar-actions" style="display:flex;align-items:center;gap:0.5rem">
+          <div data-auth-user style="display:none"></div>
+          <a href="login.html" data-auth-login class="btn btn-outline btn-sm"><i class="fas fa-sign-in-alt"></i> Sign In</a>
+          <a href="appointments.html" class="btn btn-primary btn-ripple"><i class="fas fa-calendar-plus"></i> Book Appointment</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="mobile-menu-overlay" id="mobile-overlay"></div>
+
+  <main>
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="container">
+        <h1>About SaloneMedConnect</h1>
+        <p>Our mission is to connect every Sierra Leonean to trusted, quality healthcare — regardless of location.</p>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a>
+          <i class="fas fa-chevron-right"></i>
+          <span aria-current="page">About</span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- MISSION SECTION -->
+    <section class="section-padding" style="background:var(--off-white)">
+      <div class="container">
+        <div class="mission-grid">
+          <div class="animate-on-scroll fade-left">
+            <span class="section-badge">Our Mission</span>
+            <h2 class="section-title">Healthcare for <span>Every Sierra Leonean</span></h2>
+            <div class="divider" style="margin:0.75rem 0 1.5rem"></div>
+            <p style="color:var(--gray-400);line-height:1.8;margin-bottom:1.5rem">
+              Founded with a deep passion for improving health outcomes in Sierra Leone, SaloneMedConnect was created to address one of the most pressing challenges in our healthcare system — accessibility. Millions of Sierra Leoneans face barriers to accessing quality medical care due to distance, limited information, and lack of connectivity between patients and providers.
+            </p>
+            <p style="color:var(--gray-400);line-height:1.8;margin-bottom:2rem">
+              We built SaloneMedConnect to eliminate these barriers. Through our digital platform, patients from Freetown to Kailahun can find verified doctors, book appointments, access health information, and take control of their health journey.
+            </p>
+            <div style="display:flex;gap:1rem;flex-wrap:wrap">
+              <div style="text-align:center;background:var(--white);border-radius:var(--radius-xl);padding:1.5rem 2rem;box-shadow:var(--shadow-sm)">
+                <div style="font-size:2rem;font-weight:800;font-family:var(--font-heading);color:var(--primary-color)">150+</div>
+                <div style="font-size:0.75rem;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.06em">Verified Doctors</div>
+              </div>
+              <div style="text-align:center;background:var(--white);border-radius:var(--radius-xl);padding:1.5rem 2rem;box-shadow:var(--shadow-sm)">
+                <div style="font-size:2rem;font-weight:800;font-family:var(--font-heading);color:var(--secondary-color)">14</div>
+                <div style="font-size:0.75rem;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.06em">Districts Served</div>
+              </div>
+              <div style="text-align:center;background:var(--white);border-radius:var(--radius-xl);padding:1.5rem 2rem;box-shadow:var(--shadow-sm)">
+                <div style="font-size:2rem;font-weight:800;font-family:var(--font-heading);color:#7c3aed">5k+</div>
+                <div style="font-size:0.75rem;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.06em">Patients Served</div>
+              </div>
+            </div>
+          </div>
+          <div class="animate-on-scroll fade-right">
+            <img src="../images/about.jpg" alt="Healthcare in Sierra Leone" style="width:100%;height:460px;object-fit:cover;border-radius:var(--radius-2xl)" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#e8f4fd,#b8d9f0)';this.style.minHeight='460px'">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALUES -->
+    <section class="section-padding" style="background:var(--white)">
+      <div class="container">
+        <div class="section-header animate-on-scroll fade-up">
+          <span class="section-badge">What Drives Us</span>
+          <h2 class="section-title">Our Core <span>Values</span></h2>
+          <div class="divider"></div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem">
+          <div class="value-card animate-on-scroll fade-up">
+            <div class="value-icon"><i class="fas fa-universal-access"></i></div>
+            <h4>Accessible Healthcare</h4>
+            <p>We believe healthcare is a right, not a privilege. We work to remove every barrier that prevents Sierra Leoneans from accessing medical care.</p>
+          </div>
+          <div class="value-card animate-on-scroll fade-up">
+            <div class="value-icon"><i class="fas fa-award" style="color:var(--secondary-color)"></i></div>
+            <h4>Trusted Professionals</h4>
+            <p>Every doctor on our platform is verified by the Sierra Leone Medical and Dental Council (SLMDC) and committed to excellence.</p>
+          </div>
+          <div class="value-card animate-on-scroll fade-up">
+            <div class="value-icon"><i class="fas fa-laptop-medical" style="color:#7c3aed"></i></div>
+            <h4>Digital Innovation</h4>
+            <p>We harness technology to bring world-class digital health solutions tailored to Sierra Leone's unique healthcare needs and context.</p>
+          </div>
+          <div class="value-card animate-on-scroll fade-up">
+            <div class="value-icon"><i class="fas fa-heart" style="color:#dc2626"></i></div>
+            <h4>Patient-Centred Care</h4>
+            <p>Every decision we make starts with one question: How does this improve the patient's experience and health outcome?</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JOURNEY TIMELINE -->
+    <section class="section-padding" style="background:var(--off-white)">
+      <div class="container" style="max-width:800px">
+        <div class="section-header animate-on-scroll fade-up">
+          <span class="section-badge">Our Journey</span>
+          <h2 class="section-title">Building Better <span>Healthcare Together</span></h2>
+          <div class="divider"></div>
+        </div>
+        <div class="timeline animate-on-scroll fade-up">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <span class="year">2020</span>
+            <h4>The Idea is Born</h4>
+            <p>SaloneMedConnect was conceived during the COVID-19 pandemic when the need for digital health access in Sierra Leone became undeniable.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <span class="year">2021</span>
+            <h4>Research & Development</h4>
+            <p>A dedicated team of Sierra Leonean healthcare professionals, developers, and public health experts began building the platform.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <span class="year">2022</span>
+            <h4>Platform Launch</h4>
+            <p>SaloneMedConnect officially launched in Freetown with 25 verified doctors and a mission to serve all 14 districts of Sierra Leone.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <span class="year">2023</span>
+            <h4>Nationwide Expansion</h4>
+            <p>We expanded to Bo, Kenema, Makeni, and Koidu — bringing our network to over 100 verified healthcare professionals.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <span class="year">2024–Present</span>
+            <h4>Growing Stronger</h4>
+            <p>With 150+ doctors, 5,000+ patients served, and 40+ partner hospitals, we are just getting started on our mission.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section style="background:linear-gradient(135deg,var(--primary-dark),var(--primary-color));padding:var(--space-16) 0;text-align:center">
+      <div class="container">
+        <h2 style="font-family:var(--font-heading);font-size:var(--font-size-3xl);font-weight:var(--font-bold);color:var(--white);margin-bottom:1rem">Ready to Experience Better Healthcare?</h2>
+        <p style="color:rgba(255,255,255,0.8);margin-bottom:2rem;font-size:var(--font-size-md)">Join thousands of Sierra Leoneans who trust SaloneMedConnect for their health needs.</p>
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+          <a href="appointments.html" class="btn btn-white btn-lg btn-ripple"><i class="fas fa-calendar-check"></i> Book Appointment</a>
+          <a href="contact.html"      class="btn btn-secondary btn-lg"><i class="fas fa-envelope"></i> Get in Touch</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-main">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <div class="footer-logo-wrap">
+              <div class="footer-logo-icon"><i class="fas fa-heartbeat"></i></div>
+              <span class="footer-brand">SaloneMedConnect</span>
+            </div>
+            <p class="footer-desc">Sierra Leone's trusted digital healthcare platform connecting patients with qualified doctors nationwide.</p>
+            <div class="footer-social">
+              <a href="#" class="footer-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="footer-social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="footer-social-link" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+              <a href="#" class="footer-social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="../index.html" class="footer-link"><i class="fas fa-chevron-right"></i> Home</a></li>
+              <li><a href="about.html"    class="footer-link"><i class="fas fa-chevron-right"></i> About Us</a></li>
+              <li><a href="services.html" class="footer-link"><i class="fas fa-chevron-right"></i> Services</a></li>
+              <li><a href="doctors.html"  class="footer-link"><i class="fas fa-chevron-right"></i> Doctors</a></li>
+              <li><a href="appointments.html" class="footer-link"><i class="fas fa-chevron-right"></i> Appointments</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Services</h4>
+            <ul class="footer-links">
+              <li><a href="services.html" class="footer-link"><i class="fas fa-chevron-right"></i> General Consultation</a></li>
+              <li><a href="services.html" class="footer-link"><i class="fas fa-chevron-right"></i> Find Specialists</a></li>
+              <li><a href="services.html" class="footer-link"><i class="fas fa-chevron-right"></i> Lab & Diagnostics</a></li>
+              <li><a href="services.html" class="footer-link"><i class="fas fa-chevron-right"></i> Medicine Info</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <div class="footer-contact-items">
+              <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><div><strong>Address</strong>12 Wilkinson Road, Freetown, Sierra Leone</div></div>
+              <div class="footer-contact-item"><i class="fas fa-phone-alt"></i><div><strong>Phone</strong><a href="tel:+23276000911" style="color:inherit">+232 76 000 911</a></div></div>
+              <div class="footer-contact-item"><i class="fas fa-envelope"></i><div><strong>Email</strong><a href="mailto:info@salonemedconnect.sl" style="color:inherit">info@salonemedconnect.sl</a></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="footer-copyright">&copy; <span id="footer-year">2025</span> <a href="../index.html">SaloneMedConnect</a>. All rights reserved.</p>
+        <div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Accessibility</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-to-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+
+  <script src="../js/app.js"        defer></script>
+  <script src="../js/navbar.js"     defer></script>
+  <script src="../js/auth.js"       defer></script>
+  <script src="../js/animations.js" defer></script>
+  <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
