@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" fill="#e8f4fd"/>
+  <circle cx="150" cy="110" r="65" fill="#00897b" opacity="0.2"/>
+  <circle cx="150" cy="105" r="52" fill="#00897b" opacity="0.35"/>
+  <text x="150" y="120" font-family="Arial,sans-serif" font-size="38" font-weight="bold" fill="#00897b" text-anchor="middle">MS</text>
+  <path d="M40 290 Q150 210 260 290 L260 300 L40 300 Z" fill="#00897b" opacity="0.25"/>
+  <path d="M60 300 Q150 230 240 300" stroke="#00897b" stroke-width="2" fill="none" opacity="0.4"/>
+</svg>
