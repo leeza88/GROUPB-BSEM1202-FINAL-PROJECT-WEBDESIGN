@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- SEO Meta Tags -->
+  <title>SaloneMedConnect – Connecting Sierra Leone to Better Healthcare</title>
+  <meta name="description" content="SaloneMedConnect is Sierra Leone's premier digital healthcare platform. Book appointments, consult qualified doctors, and access trusted health information from anywhere in Sierra Leone.">
+  <meta name="keywords" content="Sierra Leone healthcare, book doctor Sierra Leone, Freetown hospital, SaloneMedConnect, digital health Sierra Leone, telemedicine Sierra Leone">
+  <meta name="author" content="SaloneMedConnect">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://salonemedconnect.sl/">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="SaloneMedConnect – Connecting Sierra Leone to Better Healthcare">
+  <meta property="og:description" content="Book appointments, consult qualified doctors, and access trusted healthcare information from anywhere in Sierra Leone.">
+  <meta property="og:image"       content="images/og-image.jpg">
+  <meta property="og:url"         content="https://salonemedconnect.sl/">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="SaloneMedConnect">
+  <meta name="twitter:description" content="Sierra Leone's premier digital healthcare platform.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/auth.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress" role="progressbar" aria-label="Page scroll progress"></div>
+</head>
+
+<body>
+
+  <!-- ============ TOP BAR ============ -->
+  <div class="top-bar" role="banner" aria-label="Contact and social media bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <a href="tel:+23276000911" class="top-bar-item emergency" aria-label="Emergency: call +232 76 000 911">
+          <i class="fas fa-phone-alt" aria-hidden="true"></i>
+          Emergency: +232 76 000 911
+        </a>
+        <a href="mailto:info@salonemedconnect.sl" class="top-bar-item" aria-label="Email us">
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+          info@salonemedconnect.sl
+        </a>
+        <span class="top-bar-item">
+          <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+          Freetown, Sierra Leone
+        </span>
+      </div>
+      <div class="top-bar-right" aria-label="Social media links">
+        <a href="https://facebook.com/salonemedconnect"  class="social-link" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://instagram.com/salonemedconnect" class="social-link" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com/salonemedconnect"   class="social-link" target="_blank" rel="noopener" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://linkedin.com/company/salonemedconnect" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ NAVIGATION ============ -->
+  <header>
+    <nav class="navbar" id="main-navbar" role="navigation" aria-label="Main navigation">
+      <div class="container">
+
+        <!-- Logo -->
+        <a href="index.html" class="navbar-logo" aria-label="SaloneMedConnect home">
+          <div class="logo-icon" aria-hidden="true">
+            <i class="fas fa-heartbeat"></i>
+          </div>
+          <div class="logo-text">
+            <span class="brand">SaloneMedConnect</span>
+            <span class="tagline">Digital Healthcare · Sierra Leone</span>
+          </div>
+        </a>
+
+        <!-- Hamburger (mobile) -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navbar-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <!-- Nav Links -->
+        <ul class="navbar-menu" id="navbar-menu" role="menubar">
+          <li role="none"><a href="index.html"              class="nav-link active" role="menuitem"><i class="fas fa-home" aria-hidden="true"></i> Home</a></li>
+          <li role="none"><a href="pages/about.html"        class="nav-link" role="menuitem"><i class="fas fa-info-circle" aria-hidden="true"></i> About</a></li>
+          <li role="none"><a href="pages/services.html"     class="nav-link" role="menuitem"><i class="fas fa-stethoscope" aria-hidden="true"></i> Services</a></li>
+          <li role="none"><a href="pages/doctors.html"      class="nav-link" role="menuitem"><i class="fas fa-user-md" aria-hidden="true"></i> Doctors</a></li>
+          <li role="none"><a href="pages/appointments.html" class="nav-link" role="menuitem"><i class="fas fa-calendar-check" aria-hidden="true"></i> Appointments</a></li>
+          <li role="none"><a href="pages/contact.html"      class="nav-link" role="menuitem"><i class="fas fa-envelope" aria-hidden="true"></i> Contact</a></li>
+        </ul>
+
+        <!-- CTA + Auth -->
+        <div class="navbar-actions" style="display:flex;align-items:center;gap:0.5rem">
+          <div data-auth-user style="display:none"></div>
+          <a href="pages/login.html" data-auth-login class="btn btn-outline btn-sm" aria-label="Sign in">
+            <i class="fas fa-sign-in-alt" aria-hidden="true"></i> Sign In
+          </a>
+          <a href="pages/appointments.html" class="btn btn-primary btn-ripple" aria-label="Book an appointment">
+            <i class="fas fa-calendar-plus" aria-hidden="true"></i>
+            Book Appointment
+          </a>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+  <!-- Mobile overlay -->
+  <div class="mobile-menu-overlay" id="mobile-overlay" aria-hidden="true"></div>
+
+  <main id="main-content">
+
+    <!-- ============ HERO SECTION ============ -->
+    <section class="hero" id="home" aria-label="Hero section">
+      <div class="hero-bg" id="hero-bg" role="img" aria-label="Healthcare professionals in Sierra Leone"></div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="hero-content">
+
+          <div class="hero-badge">
+            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+            Trusted Healthcare Platform · Sierra Leone
+          </div>
+
+          <h1 class="hero-title">
+            Connecting <span class="highlight">Sierra Leone</span><br>
+            to Better Healthcare
+          </h1>
+
+          <p class="hero-description">
+            Book appointments with verified doctors, consult qualified specialists, and access trusted healthcare information — from anywhere in Sierra Leone.
+          </p>
+
+          <div class="hero-actions">
+            <a href="pages/appointments.html" class="btn btn-primary btn-lg btn-ripple" aria-label="Book an appointment now">
+              <i class="fas fa-calendar-check" aria-hidden="true"></i>
+              Book Appointment
+            </a>
+            <a href="pages/doctors.html" class="btn btn-secondary btn-lg" aria-label="Find a doctor">
+              <i class="fas fa-user-md" aria-hidden="true"></i>
+              Find Doctors
+            </a>
+          </div>
+
+          <div class="hero-stats" aria-label="Platform statistics">
+            <div class="hero-stat anim-fade-in-up delay-100">
+              <i class="fas fa-user-md hero-stat-icon" aria-hidden="true"></i>
+              <span class="stat-number" data-count="150" data-suffix="+">150+</span>
+              <span class="stat-label">Verified Doctors</span>
+            </div>
+            <div class="hero-stat anim-fade-in-up delay-300">
+              <i class="fas fa-users hero-stat-icon" aria-hidden="true"></i>
+              <span class="stat-number" data-count="5000" data-suffix="+">5,000+</span>
+              <span class="stat-label">Patients Served</span>
+            </div>
+            <div class="hero-stat anim-fade-in-up delay-500">
+              <i class="fas fa-map-marked-alt hero-stat-icon" aria-hidden="true"></i>
+              <span class="stat-number" data-count="14" data-suffix="">14</span>
+              <span class="stat-label">Districts Covered</span>
+            </div>
+            <div class="hero-stat anim-fade-in-up delay-700">
+              <i class="fas fa-star hero-stat-icon" aria-hidden="true"></i>
+              <span class="stat-number" data-count="98" data-suffix="%">98%</span>
+              <span class="stat-label">Satisfaction Rate</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="hero-scroll-indicator" aria-hidden="true">
+        <div class="scroll-mouse"><div class="scroll-dot"></div></div>
+        <span><i class="fas fa-chevron-down" aria-hidden="true"></i> Scroll</span>
+      </div>
+    </section>
+
+    <!-- ============ TRUST STRIP ============ -->
+    <div class="trust-strip" aria-label="Key platform features">
+      <div class="container stagger-children">
+        <div class="trust-item animate-on-scroll fade-up">
+          <i class="fas fa-user-shield" aria-hidden="true"></i>
+          <div>
+            <strong>SLMDC Verified Doctors</strong>
+            <span>All professionals certified</span>
+          </div>
+        </div>
+        <div class="trust-item animate-on-scroll fade-up">
+          <i class="fas fa-clock" aria-hidden="true"></i>
+          <div>
+            <strong>24/7 Emergency Support</strong>
+            <span>Always here when you need us</span>
+          </div>
+        </div>
+        <div class="trust-item animate-on-scroll fade-up">
+          <i class="fas fa-lock" aria-hidden="true"></i>
+          <div>
+            <strong>Secure &amp; Private</strong>
+            <span>Your health data protected</span>
+          </div>
+        </div>
+        <div class="trust-item animate-on-scroll fade-up">
+          <i class="fas fa-map-marked-alt" aria-hidden="true"></i>
+          <div>
+            <strong>Nationwide Coverage</strong>
+            <span>Serving all 14 districts</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ ABOUT SECTION ============ -->
+    <section class="about-section section-padding" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="about-grid">
+
+          <!-- Image -->
+          <div class="about-image-wrapper animate-on-scroll fade-left">
+            <img
+              src="images/about.jpg"
+              alt="Healthcare professionals at work in Sierra Leone"
+              loading="lazy"
+              onerror="this.onerror=null;this.src='images/placeholder-about.svg'"
+              style="background:linear-gradient(135deg,#e8f4fd,#b8d9f0)"
+            >
+            <div class="about-badge-float" aria-hidden="true">
+              <div class="badge-icon"><i class="fas fa-award"></i></div>
+              <div class="badge-text">
+                <strong>5+ Years</strong>
+                <span>Serving Sierra Leone</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="about-content animate-on-scroll fade-right">
+            <div class="section-header text-left">
+              <span class="section-badge"><i class="fas fa-info-circle" aria-hidden="true"></i> About SaloneMedConnect</span>
+              <h2 class="section-title" id="about-title">
+                Transforming Healthcare Access <span>Across Sierra Leone</span>
+              </h2>
+              <div class="divider" style="margin:0.75rem 0"></div>
+            </div>
+
+            <p class="about-description">
+              <i class="fas fa-quote-left" style="color:var(--primary-color);margin-right:0.35rem;font-size:0.85em;opacity:0.7" aria-hidden="true"></i>
+              SaloneMedConnect is Sierra Leone's leading digital health platform, dedicated to bridging the gap between patients and qualified healthcare providers. We connect people in Freetown, Bo, Kenema, Makeni, and beyond to trusted doctors, hospitals, and clinics — all through a simple, accessible digital experience.
+            </p>
+
+            <p class="about-description" style="margin-top:-1rem">
+              Our mission is to make quality healthcare accessible to every Sierra Leonean regardless of location, empowering communities with the tools and information they need to lead healthier lives.
+            </p>
+
+            <!-- Core Values -->
+            <div class="about-values stagger-children" aria-label="Our core values">
+              <div class="value-card">
+                <div class="value-icon" aria-hidden="true"><i class="fas fa-universal-access"></i></div>
+                <h4>Accessible Healthcare</h4>
+                <p>Removing barriers so every Sierra Leonean can access quality medical care.</p>
+              </div>
+              <div class="value-card">
+                <div class="value-icon" aria-hidden="true"><i class="fas fa-user-md"></i></div>
+                <h4>Trusted Professionals</h4>
+                <p>Every doctor is verified, licensed, and committed to patient wellbeing.</p>
+              </div>
+              <div class="value-card">
+                <div class="value-icon" aria-hidden="true"><i class="fas fa-laptop-medical"></i></div>
+                <h4>Digital Innovation</h4>
+                <p>Leveraging technology to modernize healthcare delivery in Sierra Leone.</p>
+              </div>
+              <div class="value-card">
+                <div class="value-icon" aria-hidden="true"><i class="fas fa-heart"></i></div>
+                <h4>Patient-Centred</h4>
+                <p>Your health, comfort, and dignity are at the centre of everything we do.</p>
+              </div>
+            </div>
+
+            <a href="pages/about.html" class="btn btn-outline btn-ripple" aria-label="Learn more about SaloneMedConnect">
+              Learn More About Us <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES SECTION ============ -->
+    <section class="services-section section-padding" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-header animate-on-scroll fade-up">
+          <span class="section-badge"><i class="fas fa-hand-holding-heart" aria-hidden="true"></i> What We Offer</span>
+          <h2 class="section-title" id="services-title">Our <span>Healthcare Services</span></h2>
+          <div class="divider"></div>
+          <p class="section-subtitle">Comprehensive digital health services designed for the unique needs of Sierra Leone's healthcare landscape.</p>
+        </div>
+
+        <div class="services-grid stagger-children" id="services-grid" aria-label="Healthcare services">
+          <!-- Dynamically loaded from services.json, fallback static cards below -->
+
+          <article class="service-card animate-on-scroll fade-up hover-lift">
+            <div class="service-icon" aria-hidden="true">
+              <i class="fas fa-stethoscope"></i>
+            </div>
+            <h3>General Consultation</h3>
+            <p>Connect with experienced general practitioners for comprehensive health assessments, diagnosis, and personalized treatment plans.</p>
+            <a href="pages/services.html" class="service-link" aria-label="Learn more about General Consultation">
+              Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </article>
+
+          <article class="service-card animate-on-scroll fade-up hover-lift">
+            <div class="service-icon" aria-hidden="true">
+              <i class="fas fa-user-md" style="color:var(--secondary-color)"></i>
+            </div>
+            <h3>Find Doctors</h3>
+            <p>Browse our network of 150+ verified healthcare professionals across Sierra Leone. Filter by specialty, location, and availability.</p>
+            <a href="pages/doctors.html" class="service-link" aria-label="Learn more about finding doctors">
+              Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </article>
+
+          <article class="service-card animate-on-scroll fade-up hover-lift">
+            <div class="service-icon" aria-hidden="true">
+              <i class="fas fa-calendar-check" style="color:#7c3aed"></i>
+            </div>
+            <h3>Appointment Booking</h3>
+            <p>Book appointments seamlessly with your preferred doctor. Receive instant confirmation and reminders via SMS and email.</p>
+            <a href="pages/appointments.html" class="service-link" aria-label="Book an appointment">
+              Book Now <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </article>
+
+          <article class="service-card animate-on-scroll fade-up hover-lift">
+            <div class="service-icon" aria-hidden="true">
+              <i class="fas fa-pills" style="color:#dc2626"></i>
+            </div>
+            <h3>Medicine Information</h3>
+            <p>Access Sierra Leone's comprehensive medicine database. Find dosage information, side effects, and local pharmacy availability.</p>
+            <a href="pages/services.html" class="service-link" aria-label="Learn more about Medicine Information">
+              Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </article>
+
+        </div>
+
+        <div class="text-center" style="margin-top:3rem">
+          <a href="pages/services.html" class="btn btn-outline btn-ripple" aria-label="View all services">
+            View All Services <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STATS SECTION ============ -->
+    <section class="stats-section" aria-label="Platform statistics">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item animate-on-scroll scale-in">
+            <div class="stat-icon" aria-hidden="true"><i class="fas fa-user-md"></i></div>
+            <span class="count" data-count="150" data-suffix="+">150+</span>
+            <span class="label">Verified Doctors</span>
+          </div>
+          <div class="stat-item animate-on-scroll scale-in">
+            <div class="stat-icon" aria-hidden="true"><i class="fas fa-users"></i></div>
+            <span class="count" data-count="5000" data-suffix="+">5,000+</span>
+            <span class="label">Patients Served</span>
+          </div>
+          <div class="stat-item animate-on-scroll scale-in">
+            <div class="stat-icon" aria-hidden="true"><i class="fas fa-hospital"></i></div>
+            <span class="count" data-count="40" data-suffix="+">40+</span>
+            <span class="label">Partner Hospitals</span>
+          </div>
+          <div class="stat-item animate-on-scroll scale-in">
+            <div class="stat-icon" aria-hidden="true"><i class="fas fa-star"></i></div>
+            <span class="count" data-count="98" data-suffix="%">98%</span>
+            <span class="label">Satisfaction Rate</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DOCTORS SECTION ============ -->
+    <section class="doctors-section section-padding" id="doctors" aria-labelledby="doctors-title">
+      <div class="container">
+        <div class="section-header animate-on-scroll fade-up">
+          <span class="section-badge"><i class="fas fa-user-md" aria-hidden="true"></i> Our Medical Team</span>
+          <h2 class="section-title" id="doctors-title">Meet Our <span>Expert Doctors</span></h2>
+          <div class="divider"></div>
+          <p class="section-subtitle">Our network of verified, SLMDC-licensed healthcare professionals are ready to provide you with the best medical care Sierra Leone has to offer.</p>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="doctor-categories stagger-children" id="doctor-category-filters" aria-label="Filter doctors by category">
+          <button class="cat-btn animate-on-scroll fade-up active" data-cat="" onclick="DoctorsModule.filterByCategory('', this)"><i class="fas fa-th-large" aria-hidden="true"></i> All</button>
+          <button class="cat-btn animate-on-scroll fade-up" data-cat="Women's Health" onclick="DoctorsModule.filterByCategory('Women\'s Health', this)"><i class="fas fa-venus" aria-hidden="true"></i> Women's Health</button>
+          <button class="cat-btn animate-on-scroll fade-up" data-cat="Cardiology" onclick="DoctorsModule.filterByCategory('Cardiology', this)"><i class="fas fa-heart" aria-hidden="true"></i> Cardiology</button>
+          <button class="cat-btn animate-on-scroll fade-up" data-cat="Pediatrics" onclick="DoctorsModule.filterByCategory('Pediatrics', this)"><i class="fas fa-child" aria-hidden="true"></i> Pediatrics</button>
+          <button class="cat-btn animate-on-scroll fade-up" data-cat="Surgery" onclick="DoctorsModule.filterByCategory('Surgery', this)"><i class="fas fa-syringe" aria-hidden="true"></i> Surgery</button>
+          <button class="cat-btn animate-on-scroll fade-up" data-cat="Mental Health" onclick="DoctorsModule.filterByCategory('Mental Health', this)"><i class="fas fa-brain" aria-hidden="true"></i> Mental Health</button>
+          <button class="cat-btn animate-on-scroll fade-up" data-cat="Public Health" onclick="DoctorsModule.filterByCategory('Public Health', this)"><i class="fas fa-globe" aria-hidden="true"></i> Public Health</button>
+          <button class="cat-btn animate-on-scroll fade-up" data-cat="Infectious Disease" onclick="DoctorsModule.filterByCategory('Infectious Disease', this)"><i class="fas fa-virus" aria-hidden="true"></i> Infectious Disease</button>
+        </div>
+
+        <div class="doctors-grid" id="doctors-grid" aria-label="Doctor profiles">
+          <!-- Dynamically loaded by doctors.js -->
+        </div>
+
+        <div class="text-center" style="margin-top:3rem">
+          <a href="pages/doctors.html" class="btn btn-outline btn-ripple" aria-label="View all doctors">
+            View All Doctors <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ APPOINTMENT SECTION ============ -->
+    <section class="appointment-section section-padding" id="appointment" aria-labelledby="appointment-title">
+      <div class="container">
+        <div class="appointment-grid">
+
+          <!-- Info Column -->
+          <div class="appointment-info animate-on-scroll fade-left">
+            <span class="section-badge"><i class="fas fa-calendar-plus" aria-hidden="true"></i> Easy Booking</span>
+            <h2 id="appointment-title">
+              Book Your <span>Appointment</span> in Minutes
+            </h2>
+            <p>
+              <i class="fas fa-calendar-check" style="color:var(--primary-color);margin-right:0.35rem" aria-hidden="true"></i>
+              Skip the queues. Book with your preferred doctor or specialist online, get instant confirmation, and receive reminders — all from the comfort of your home.
+            </p>
+
+            <div class="appointment-features stagger-children">
+              <div class="appt-feature animate-on-scroll fade-up">
+                <div class="appt-feature-icon" aria-hidden="true"><i class="fas fa-bolt"></i></div>
+                <div class="appt-feature-text">
+                  <strong>Instant Confirmation</strong>
+                  <span>Receive your booking confirmation immediately via email and SMS.</span>
+                </div>
+              </div>
+              <div class="appt-feature animate-on-scroll fade-up">
+                <div class="appt-feature-icon" aria-hidden="true"><i class="fas fa-bell"></i></div>
+                <div class="appt-feature-text">
+                  <strong>Appointment Reminders</strong>
+                  <span>We'll remind you 24 hours and 1 hour before your appointment.</span>
+                </div>
+              </div>
+              <div class="appt-feature animate-on-scroll fade-up">
+                <div class="appt-feature-icon" aria-hidden="true"><i class="fas fa-sync-alt"></i></div>
+                <div class="appt-feature-text">
+                  <strong>Easy Rescheduling</strong>
+                  <span>Need to change your appointment? Reschedule easily from your account.</span>
+                </div>
+              </div>
+              <div class="appt-feature animate-on-scroll fade-up">
+                <div class="appt-feature-icon" aria-hidden="true"><i class="fas fa-shield-alt"></i></div>
+                <div class="appt-feature-text">
+                  <strong>Secure & Private</strong>
+                  <span>Your personal and medical information is always kept confidential.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form Column -->
+          <div class="appointment-form-card animate-on-scroll fade-right">
+            <h3 class="form-title">
+              <i class="fas fa-calendar-plus" aria-hidden="true"></i>
+              Schedule an Appointment
+            </h3>
+
+            <form id="appointment-form" novalidate aria-label="Appointment booking form">
+              <div class="form-grid">
+
+                <div class="form-group">
+                  <label for="full-name"><i class="fas fa-user" aria-hidden="true"></i> Full Name <span class="required" aria-label="required">*</span></label>
+                  <input type="text" id="full-name" name="full-name" class="form-input" placeholder="e.g., Aminata Koroma" autocomplete="name" required aria-required="true">
+                  <span class="error-message" id="full-name-error" role="alert" aria-live="polite"><i class="fas fa-exclamation-circle"></i><span></span></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="email"><i class="fas fa-envelope" aria-hidden="true"></i> Email Address <span class="required" aria-label="required">*</span></label>
+                  <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com" autocomplete="email" required aria-required="true">
+                  <span class="error-message" id="email-error" role="alert" aria-live="polite"><i class="fas fa-exclamation-circle"></i><span></span></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="phone"><i class="fas fa-phone-alt" aria-hidden="true"></i> Phone Number <span class="required" aria-label="required">*</span></label>
+                  <input type="tel" id="phone" name="phone" class="form-input" placeholder="+232 76 000 000" autocomplete="tel" required aria-required="true">
+                  <span class="error-message" id="phone-error" role="alert" aria-live="polite"><i class="fas fa-exclamation-circle"></i><span></span></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="preferred-doctor"><i class="fas fa-user-md" aria-hidden="true"></i> Preferred Doctor <span class="required" aria-label="required">*</span></label>
+                  <select id="preferred-doctor" name="preferred-doctor" class="form-select" required aria-required="true">
+                    <option value="" disabled selected>-- Select a Doctor --</option>
+                  </select>
+                  <span class="error-message" id="preferred-doctor-error" role="alert" aria-live="polite"><i class="fas fa-exclamation-circle"></i><span></span></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="appointment-date"><i class="fas fa-calendar-alt" aria-hidden="true"></i> Preferred Date <span class="required" aria-label="required">*</span></label>
+                  <input type="date" id="appointment-date" name="appointment-date" class="form-input" required aria-required="true">
+                  <span class="error-message" id="appointment-date-error" role="alert" aria-live="polite"><i class="fas fa-exclamation-circle"></i><span></span></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="appointment-time"><i class="fas fa-clock" aria-hidden="true"></i> Preferred Time <span class="required" aria-label="required">*</span></label>
+                  <select id="appointment-time" name="appointment-time" class="form-select" required aria-required="true">
+                    <option value="" disabled selected>-- Select Time --</option>
+                    <optgroup label="Morning">
+                      <option value="8:00 AM">8:00 AM</option>
+                      <option value="8:30 AM">8:30 AM</option>
+                      <option value="9:00 AM">9:00 AM</option>
+                      <option value="9:30 AM">9:30 AM</option>
+                      <option value="10:00 AM">10:00 AM</option>
+                      <option value="10:30 AM">10:30 AM</option>
+                      <option value="11:00 AM">11:00 AM</option>
+                      <option value="11:30 AM">11:30 AM</option>
+                    </optgroup>
+                    <optgroup label="Afternoon">
+                      <option value="12:00 PM">12:00 PM</option>
+                      <option value="1:00 PM">1:00 PM</option>
+                      <option value="2:00 PM">2:00 PM</option>
+                      <option value="2:30 PM">2:30 PM</option>
+                      <option value="3:00 PM">3:00 PM</option>
+                      <option value="3:30 PM">3:30 PM</option>
+                      <option value="4:00 PM">4:00 PM</option>
+                      <option value="4:30 PM">4:30 PM</option>
+                    </optgroup>
+                    <optgroup label="Evening">
+                      <option value="5:00 PM">5:00 PM</option>
+                      <option value="5:30 PM">5:30 PM</option>
+                    </optgroup>
+                  </select>
+                  <span class="error-message" id="appointment-time-error" role="alert" aria-live="polite"><i class="fas fa-exclamation-circle"></i><span></span></span>
+                </div>
+
+                <div class="form-group full">
+                  <label for="message"><i class="fas fa-notes-medical" aria-hidden="true"></i> Message / Symptoms <span style="color:var(--gray-300);font-weight:400">(Optional)</span></label>
+                  <textarea id="message" name="message" class="form-textarea" placeholder="Briefly describe your symptoms or reason for visit..." rows="3"></textarea>
+                </div>
+
+              </div>
+
+              <button type="submit" class="btn btn-primary form-submit-btn btn-ripple" aria-label="Submit appointment request">
+                <i class="fas fa-calendar-check" aria-hidden="true"></i>
+                Confirm Appointment
+              </button>
+
+              <div class="form-feedback" id="form-feedback" role="alert" aria-live="polite"></div>
+
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TESTIMONIALS SECTION ============ -->
+    <section class="testimonials-section section-padding" id="testimonials" aria-labelledby="testimonials-title">
+      <div class="container">
+        <div class="section-header animate-on-scroll fade-up">
+          <span class="section-badge"><i class="fas fa-comment-dots" aria-hidden="true"></i> Patient Stories</span>
+          <h2 class="section-title" id="testimonials-title">What Our <span>Patients Say</span></h2>
+          <div class="divider"></div>
+          <p class="section-subtitle">Real experiences from real Sierra Leoneans who have trusted SaloneMedConnect for their healthcare needs.</p>
+        </div>
+
+        <div class="testimonials-grid stagger-children" id="testimonials-grid" aria-label="Patient testimonials">
+          <!-- Dynamically loaded by animations.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ SECTION ============ -->
+    <section class="faq-section section-padding" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section-header animate-on-scroll fade-up">
+          <span class="section-badge"><i class="fas fa-question-circle" aria-hidden="true"></i> FAQ</span>
+          <h2 class="section-title" id="faq-title">Frequently Asked <span>Questions</span></h2>
+          <div class="divider"></div>
+          <p class="section-subtitle">Everything you need to know about using SaloneMedConnect. Can't find your answer? <a href="pages/contact.html" style="color:var(--primary-color)">Contact us</a>.</p>
+        </div>
+
+        <div class="faq-container" id="faq-container" aria-label="Frequently asked questions">
+          <!-- Dynamically loaded by animations.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HEALTH ADVICE SECTION ============ -->
+    <section class="section-padding" id="health-advice" style="background:var(--off-white)" aria-labelledby="health-advice-title">
+      <div class="container">
+        <div class="section-header animate-on-scroll fade-up">
+          <span class="section-badge"><i class="fas fa-shield-virus" aria-hidden="true"></i> Disease Prevention</span>
+          <h2 class="section-title" id="health-advice-title">Health Advice & <span>Prevention Tips</span></h2>
+          <div class="divider"></div>
+          <p class="section-subtitle">Evidence-based guidance from Sierra Leone's medical experts on preventing the most common illnesses in our communities.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem" id="health-advice-home-grid">
+          <!-- Dynamically loaded -->
+        </div>
+        <div class="text-center" style="margin-top:2.5rem">
+          <a href="pages/dashboard.html#health-advice" class="btn btn-outline btn-ripple">
+            View All Health Guides <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MEDICAL VIDEOS SECTION ============ -->
+    <section class="section-padding" id="health-videos" style="background:var(--white)" aria-labelledby="videos-title">
+      <div class="container">
+        <div class="section-header animate-on-scroll fade-up">
+          <span class="section-badge"><i class="fas fa-video" aria-hidden="true"></i> Health Education</span>
+          <h2 class="section-title" id="videos-title">Learn from <span>Medical Experts</span></h2>
+          <div class="divider"></div>
+          <p class="section-subtitle">Curated health education videos covering Sierra Leone's key medical topics — from malaria prevention to maternal health.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.25rem" id="videos-home-grid">
+          <!-- Dynamically loaded -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ NEWSLETTER SECTION ============ -->
+    <section class="newsletter-section" id="newsletter" aria-labelledby="newsletter-title">
+      <div class="container">
+        <div class="newsletter-content animate-on-scroll scale-in">
+          <div class="newsletter-icon" aria-hidden="true">
+            <i class="fas fa-paper-plane"></i>
+          </div>
+          <h2 id="newsletter-title">Stay Informed, Stay Healthy</h2>
+          <p>Subscribe to our newsletter and receive weekly health tips, medical news from Sierra Leone, and updates about new doctors and services on SaloneMedConnect.</p>
+
+          <form class="newsletter-form" aria-label="Newsletter subscription form">
+            <input
+              type="email"
+              class="newsletter-input"
+              id="newsletter-email"
+              placeholder="Enter your email address..."
+              aria-label="Email address for newsletter"
+              autocomplete="email"
+            >
+            <button type="submit" class="btn btn-white btn-ripple" aria-label="Subscribe to newsletter">
+              Subscribe <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </button>
+          </form>
+
+          <div class="newsletter-feedback" id="newsletter-feedback" role="alert" aria-live="polite"></div>
+          <p class="newsletter-note">
+            <i class="fas fa-lock" aria-hidden="true"></i>
+            We respect your privacy. Unsubscribe at any time.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== VIDEO MODAL (homepage) ===== -->
+  <div id="home-video-modal"
+    style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:9999;align-items:center;justify-content:center;padding:1rem"
+    onclick="if(event.target===this){window._closeVideoModal()}"
+    role="dialog" aria-modal="true" aria-label="Health education video player">
+    <div style="background:#000;border-radius:14px;overflow:hidden;width:100%;max-width:820px;position:relative">
+      <button onclick="window._closeVideoModal()"
+        style="position:absolute;top:0.625rem;right:0.875rem;background:rgba(255,255,255,0.15);border:none;color:#fff;font-size:1.25rem;cursor:pointer;z-index:2;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center"
+        aria-label="Close video"><i class="fas fa-times"></i></button>
+      <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden">
+        <iframe id="home-video-iframe" src="" frameborder="0" allowfullscreen
+          style="position:absolute;top:0;left:0;width:100%;height:100%"
+          allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture">
+        </iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer" role="contentinfo" aria-label="Site footer">
+    <div class="footer-main">
+      <div class="container">
+        <div class="footer-grid">
+
+          <!-- Column 1: Brand -->
+          <div class="footer-col animate-on-scroll fade-up">
+            <div class="footer-logo-wrap">
+              <div class="footer-logo-icon" aria-hidden="true">
+                <i class="fas fa-heartbeat"></i>
+              </div>
+              <span class="footer-brand">SaloneMedConnect</span>
+            </div>
+            <p class="footer-desc">
+              Sierra Leone's trusted digital healthcare platform. Connecting patients with qualified doctors, hospitals, and healthcare resources nationwide for a healthier Sierra Leone.
+            </p>
+            <div class="footer-social" aria-label="Social media links">
+              <a href="https://facebook.com/salonemedconnect"  class="footer-social-link" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://instagram.com/salonemedconnect" class="footer-social-link" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="https://twitter.com/salonemedconnect"   class="footer-social-link" target="_blank" rel="noopener" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+              <a href="https://linkedin.com/company/salonemedconnect" class="footer-social-link" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://youtube.com/@salonemedconnect" class="footer-social-link" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+
+          <!-- Column 2: Quick Links -->
+          <nav class="footer-col animate-on-scroll fade-up" style="transition-delay:100ms" aria-label="Quick navigation links">
+            <h4><i class="fas fa-link" aria-hidden="true"></i> Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="index.html"              class="footer-link"><i class="fas fa-chevron-right"></i> Home</a></li>
+              <li><a href="pages/about.html"        class="footer-link"><i class="fas fa-chevron-right"></i> About Us</a></li>
+              <li><a href="pages/services.html"     class="footer-link"><i class="fas fa-chevron-right"></i> Our Services</a></li>
+              <li><a href="pages/doctors.html"      class="footer-link"><i class="fas fa-chevron-right"></i> Find Doctors</a></li>
+              <li><a href="pages/appointments.html" class="footer-link"><i class="fas fa-chevron-right"></i> Book Appointment</a></li>
+              <li><a href="pages/contact.html"      class="footer-link"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+            </ul>
+          </nav>
+
+          <!-- Column 3: Services -->
+          <nav class="footer-col animate-on-scroll fade-up" style="transition-delay:200ms" aria-label="Service links">
+            <h4><i class="fas fa-concierge-bell" aria-hidden="true"></i> Our Services</h4>
+            <ul class="footer-links">
+              <li><a href="pages/services.html" class="footer-link"><i class="fas fa-chevron-right"></i> General Consultation</a></li>
+              <li><a href="pages/services.html" class="footer-link"><i class="fas fa-chevron-right"></i> Specialist Doctors</a></li>
+              <li><a href="pages/services.html" class="footer-link"><i class="fas fa-chevron-right"></i> Lab & Diagnostics</a></li>
+              <li><a href="pages/services.html" class="footer-link"><i class="fas fa-chevron-right"></i> Medicine Info</a></li>
+              <li><a href="pages/services.html" class="footer-link"><i class="fas fa-chevron-right"></i> Emergency Services</a></li>
+              <li><a href="pages/services.html" class="footer-link"><i class="fas fa-chevron-right"></i> Health Resources</a></li>
+            </ul>
+          </nav>
+
+          <!-- Column 4: Contact -->
+          <div class="footer-col animate-on-scroll fade-up" style="transition-delay:300ms">
+            <h4><i class="fas fa-address-card" aria-hidden="true"></i> Contact Us</h4>
+            <div class="footer-contact-items">
+              <div class="footer-contact-item">
+                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                <div>
+                  <strong>Address</strong>
+                  12 Wilkinson Road, Aberdeen,<br>Freetown, Western Area, Sierra Leone
+                </div>
+              </div>
+              <div class="footer-contact-item">
+                <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                <div>
+                  <strong>Phone</strong>
+                  <a href="tel:+23276000911" style="color:inherit">+232 76 000 911</a> (Emergency)<br>
+                  <a href="tel:+23277000123" style="color:inherit">+232 77 000 123</a> (General)
+                </div>
+              </div>
+              <div class="footer-contact-item">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+                <div>
+                  <strong>Email</strong>
+                  <a href="mailto:info@salonemedconnect.sl" style="color:inherit">info@salonemedconnect.sl</a><br>
+                  <a href="mailto:support@salonemedconnect.sl" style="color:inherit">support@salonemedconnect.sl</a>
+                </div>
+              </div>
+              <div class="footer-contact-item">
+                <i class="fas fa-clock" aria-hidden="true"></i>
+                <div>
+                  <strong>Working Hours</strong>
+                  Mon – Fri: 8:00 AM – 6:00 PM<br>
+                  Sat: 9:00 AM – 2:00 PM
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="footer-copyright">
+          &copy; <span id="footer-year">2025</span>
+          <a href="index.html">SaloneMedConnect</a>.
+          All rights reserved. Made with <i class="fas fa-heart" style="color:#ef4444" aria-label="love"></i> for Sierra Leone.
+        </p>
+        <div class="footer-legal">
+          <a href="#"><i class="fas fa-shield-alt" aria-hidden="true"></i> Privacy Policy</a>
+          <a href="#"><i class="fas fa-file-contract" aria-hidden="true"></i> Terms of Service</a>
+          <a href="#"><i class="fas fa-cookie-bite" aria-hidden="true"></i> Cookie Policy</a>
+          <a href="#"><i class="fas fa-universal-access" aria-hidden="true"></i> Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button id="back-to-top" aria-label="Scroll back to top" title="Back to top">
+    <i class="fas fa-chevron-up" aria-hidden="true"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="js/app.js"         defer></script>
+  <script src="js/navbar.js"      defer></script>
+  <script src="js/auth.js"        defer></script>
+  <script src="js/doctors.js"     defer></script>
+  <script src="js/appointment.js" defer></script>
+  <script src="js/newsletter.js"  defer></script>
+  <script src="js/animations.js"  defer></script>
+
+  <script>
+    // Update copyright year
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+    // ─── Video modal for homepage ───────────────
+    window._openVideoModal = function(youtubeId, title) {
+      const modal  = document.getElementById('home-video-modal');
+      const iframe = document.getElementById('home-video-iframe');
+      if (!modal || !iframe) return;
+      iframe.src = `https://www.youtube.com/embed/${encodeURIComponent(youtubeId)}?autoplay=1&rel=0`;
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    };
+
+    window._closeVideoModal = function() {
+      const modal  = document.getElementById('home-video-modal');
+      const iframe = document.getElementById('home-video-iframe');
+      if (modal)  modal.style.display = 'none';
+      if (iframe) iframe.src = '';
+      document.body.style.overflow = '';
+    };
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') window._closeVideoModal && window._closeVideoModal();
+    });
+
+    // Newsletter form inline setup (additional binding)
+    document.addEventListener('DOMContentLoaded', () => {
+      const nlForm = document.querySelector('.newsletter-form');
+      const nlInput = document.getElementById('newsletter-email');
+      const nlFeedback = document.getElementById('newsletter-feedback');
+      const nlBtn = nlForm?.querySelector('button');
+
+      if (nlBtn && nlInput) {
+        nlBtn.addEventListener('click', async (e) => {
+          e.preventDefault();
+          if (window.NewsletterModule) {
+            await NewsletterModule.handleSubmit(nlInput, nlFeedback, nlForm);
+          }
+        });
+        nlInput.addEventListener('keydown', async (e) => {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            if (window.NewsletterModule) {
+              await NewsletterModule.handleSubmit(nlInput, nlFeedback, nlForm);
+            }
+          }
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
