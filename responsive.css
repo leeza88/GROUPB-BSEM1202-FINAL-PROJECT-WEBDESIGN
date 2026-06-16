@@ -1,0 +1,175 @@
+/* ============================================
+   RESPONSIVE STYLES - SaloneMedConnect
+   Mobile-first breakpoints
+   ============================================ */
+
+/* ---- Extra Large: 1280px+ ---- */
+@media (min-width: 1280px) {
+  .services-grid { grid-template-columns: repeat(4, 1fr); }
+  .doctors-grid  { grid-template-columns: repeat(4, 1fr); }
+  .stats-grid    { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* ---- Large: 1024px - 1279px ---- */
+@media (max-width: 1279px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .doctors-grid  { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid   { grid-template-columns: 1.2fr 1fr 1fr 1fr; }
+}
+
+/* ---- Medium-Large: 992px - 1023px ---- */
+@media (max-width: 1023px) {
+  :root {
+    --container-padding: 1.25rem;
+  }
+
+  .about-grid          { grid-template-columns: 1fr; gap: var(--space-10); }
+  .about-image-wrapper img { height: 380px; }
+  .about-values        { grid-template-columns: repeat(2, 1fr); }
+
+  .appointment-grid { grid-template-columns: 1fr; }
+
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-6); }
+
+  .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--space-8); }
+  .footer-col:first-child { grid-column: 1 / -1; }
+
+  .hero-stats { gap: var(--space-6); }
+}
+
+/* ---- Tablet: 768px - 991px ---- */
+@media (max-width: 991px) {
+  .navbar-menu {
+    position: fixed;
+    top: calc(var(--topbar-height) + var(--navbar-height));
+    left: 0;
+    width: 280px;
+    height: calc(100vh - var(--topbar-height) - var(--navbar-height));
+    background: var(--white);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--space-6);
+    gap: var(--space-1);
+    transform: translateX(-100%);
+    transition: transform var(--transition-base);
+    z-index: var(--z-sticky);
+    box-shadow: var(--shadow-2xl);
+    overflow-y: auto;
+    border-right: 1px solid var(--gray-100);
+  }
+
+  .navbar-menu.open { transform: translateX(0); }
+  .hamburger { display: flex; }
+  .navbar-actions .btn { display: none; }
+
+  .nav-link {
+    width: 100%;
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-lg);
+  }
+
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .section-title { font-size: var(--font-size-2xl); }
+
+  .top-bar-left .top-bar-item:not(.emergency) { display: none; }
+}
+
+/* ---- Mobile Large: 640px - 767px ---- */
+@media (max-width: 767px) {
+  :root {
+    --topbar-height: 36px;
+    --navbar-height: 68px;
+    --space-20: 3.5rem;
+    --space-24: 4rem;
+  }
+
+  .top-bar .top-bar-item { font-size: 10px; }
+  .social-link { width: 22px; height: 22px; font-size: 10px; }
+
+  .section-title { font-size: var(--font-size-xl); }
+  .section-subtitle { font-size: var(--font-size-base); }
+  .section-header { margin-bottom: var(--space-8); }
+
+  .hero-title { font-size: clamp(1.75rem, 6vw, 2.5rem); }
+  .hero-description { font-size: var(--font-size-base); }
+  .hero-actions { flex-direction: column; }
+  .hero-actions .btn { width: 100%; max-width: 320px; justify-content: center; }
+  .hero-stats { flex-wrap: wrap; gap: var(--space-5); }
+  .hero-stat .stat-number { font-size: var(--font-size-xl); }
+
+  .trust-strip .container { justify-content: center; gap: var(--space-5); }
+  .trust-item:nth-child(n+3) { display: none; }
+
+  .about-grid { grid-template-columns: 1fr; }
+  .about-image-wrapper img { height: 280px; }
+  .about-values { grid-template-columns: 1fr 1fr; }
+
+  .services-grid { grid-template-columns: 1fr; }
+  .service-card { padding: var(--space-6); }
+
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-5); }
+  .stat-item .count { font-size: var(--font-size-3xl); }
+
+  .doctors-grid { grid-template-columns: 1fr; }
+
+  .appointment-grid { grid-template-columns: 1fr; }
+  .form-grid { grid-template-columns: 1fr; }
+  .form-group.full { grid-column: 1; }
+  .appointment-form-card { padding: var(--space-5); }
+
+  .testimonials-grid { grid-template-columns: 1fr; }
+
+  .newsletter-form { flex-direction: column; }
+  .newsletter-input { border-radius: var(--radius-lg); }
+  .newsletter-content h2 { font-size: var(--font-size-xl); }
+
+  .footer-grid { grid-template-columns: 1fr; gap: var(--space-8); }
+  .footer-col:first-child { grid-column: auto; }
+  .footer-bottom .container { flex-direction: column; text-align: center; gap: var(--space-3); }
+
+  .faq-question { padding: var(--space-4); }
+  .faq-question h4 { font-size: var(--font-size-sm); }
+
+  #back-to-top { width: 40px; height: 40px; font-size: 0.875rem; }
+}
+
+/* ---- Mobile Small: up to 479px ---- */
+@media (max-width: 479px) {
+  :root { --container-padding: 1rem; }
+
+  .hero-content { padding: var(--space-12) 0; }
+  .hero-badge { font-size: 11px; }
+
+  .about-values { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: 1fr; }
+  .doctors-grid  { grid-template-columns: 1fr; }
+
+  .btn-lg { padding: 0.875rem 1.75rem; font-size: var(--font-size-sm); }
+
+  .top-bar-right .social-link:nth-child(n+4) { display: none; }
+
+  .page-hero h1 { font-size: var(--font-size-2xl); }
+
+  .footer-legal { flex-direction: column; gap: var(--space-2); text-align: center; }
+
+  .hero-scroll-indicator { display: none; }
+
+  .newsletter-form { gap: var(--space-2); }
+}
+
+/* ---- Print Styles ---- */
+@media print {
+  .top-bar,
+  .navbar,
+  .hero-scroll-indicator,
+  #back-to-top,
+  .newsletter-section,
+  .footer { display: none; }
+
+  body { font-size: 12pt; color: #000; }
+  .container { max-width: 100%; }
+  a[href]::after { content: ' (' attr(href) ')'; font-size: 10pt; color: #666; }
+}
