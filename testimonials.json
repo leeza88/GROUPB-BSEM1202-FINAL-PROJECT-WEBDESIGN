@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "name": "Hawa Kamara",
+    "location": "Freetown, Western Area",
+    "role": "Patient",
+    "avatar": null,
+    "initials": "HK",
+    "rating": 5,
+    "text": "SaloneMedConnect has completely changed how I access healthcare. I was able to book an appointment with a specialist in minutes. The doctor was professional, knowledgeable, and genuinely cared about my wellbeing. I highly recommend this platform to every Sierra Leonean.",
+    "date": "November 2024"
+  },
+  {
+    "id": 2,
+    "name": "James Koroma",
+    "location": "Bo, Southern Province",
+    "role": "Patient",
+    "avatar": null,
+    "initials": "JK",
+    "rating": 5,
+    "text": "Living in Bo, it was always difficult to access specialist doctors in Freetown. SaloneMedConnect bridged that gap perfectly. The appointment booking system is smooth and the doctors are world-class. I found a pediatrician for my daughter with just a few clicks!",
+    "date": "October 2024"
+  },
+  {
+    "id": 3,
+    "name": "Isatu Sesay",
+    "location": "Makeni, Northern Province",
+    "role": "Patient",
+    "avatar": null,
+    "initials": "IS",
+    "rating": 5,
+    "text": "The medicine information feature is incredibly useful. I was able to verify the medication my doctor prescribed and check for interactions with my other medicines. This kind of digital health resource is exactly what Sierra Leone needs.",
+    "date": "December 2024"
+  },
+  {
+    "id": 4,
+    "name": "Dr. Pita Ndomahina",
+    "location": "Freetown, Western Area",
+    "role": "Registered Doctor",
+    "avatar": null,
+    "initials": "PN",
+    "rating": 5,
+    "text": "As a healthcare professional, I appreciate the professionalism of SaloneMedConnect. It has made my practice more accessible to patients across the country. The platform is well-designed, secure, and truly serves the needs of Sierra Leoneans.",
+    "date": "January 2025"
+  },
+  {
+    "id": 5,
+    "name": "Agnes Fofana",
+    "location": "Kenema, Eastern Province",
+    "role": "Patient",
+    "avatar": null,
+    "initials": "AF",
+    "rating": 4,
+    "text": "I've used SaloneMedConnect three times now and each experience has been excellent. The booking process is straightforward, the doctors are responsive, and I always receive timely appointment reminders. This is healthcare done right for Sierra Leone.",
+    "date": "February 2025"
+  },
+  {
+    "id": 6,
+    "name": "Mohamed Bah",
+    "location": "Port Loko, Northern Province",
+    "role": "Patient",
+    "avatar": null,
+    "initials": "MB",
+    "rating": 5,
+    "text": "SaloneMedConnect makes me proud of what Sierra Leone is building in the digital health space. I can now consult a qualified doctor without traveling to Freetown. This platform has saved me time, money, and stress. Keep up the excellent work!",
+    "date": "March 2025"
+  }
+]

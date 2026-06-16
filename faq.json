@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "question": "How do I book an appointment on SaloneMedConnect?",
+    "answer": "Booking an appointment is simple. Visit our Appointments page, fill in your personal details, select your preferred doctor and specialty, choose a convenient date and time, and submit your request. You will receive an SMS and email confirmation within minutes.",
+    "category": "appointments"
+  },
+  {
+    "id": 2,
+    "question": "Are the doctors on SaloneMedConnect verified and licensed?",
+    "answer": "Yes. All healthcare professionals listed on SaloneMedConnect are verified through the Sierra Leone Medical and Dental Council (SLMDC). We conduct rigorous background checks and credential verification before any doctor joins our platform.",
+    "category": "doctors"
+  },
+  {
+    "id": 3,
+    "question": "Is my personal and medical information kept private?",
+    "answer": "Absolutely. SaloneMedConnect takes patient privacy very seriously. All personal and medical data is encrypted and stored securely. We comply with international healthcare data protection standards and never share your information with third parties without your consent.",
+    "category": "privacy"
+  },
+  {
+    "id": 4,
+    "question": "How much does it cost to use SaloneMedConnect?",
+    "answer": "Creating an account and browsing doctors and services on SaloneMedConnect is completely free. Consultation fees are set by individual doctors and are clearly displayed on each doctor's profile. There are no hidden charges from the platform.",
+    "category": "pricing"
+  },
+  {
+    "id": 5,
+    "question": "Can I use SaloneMedConnect from outside Freetown?",
+    "answer": "Yes! SaloneMedConnect is designed to serve all Sierra Leoneans regardless of location. Patients from Bo, Kenema, Makeni, Koidu, and all other cities and towns can access our services. We are working towards expanding teleconsultation services for remote areas.",
+    "category": "access"
+  },
+  {
+    "id": 6,
+    "question": "What should I do in a medical emergency?",
+    "answer": "In a medical emergency, please call our emergency line immediately at +232 76 000 911 or call 117 (national emergency). Do not rely solely on this platform for emergencies. SaloneMedConnect provides guidance and connects you to nearby emergency services, but always prioritize calling emergency services first.",
+    "category": "emergency"
+  },
+  {
+    "id": 7,
+    "question": "How do I cancel or reschedule an appointment?",
+    "answer": "You can cancel or reschedule an appointment by logging into your account and navigating to 'My Appointments'. Please provide at least 24 hours notice for cancellations out of respect for our healthcare providers' schedules. Late cancellations may incur a small fee.",
+    "category": "appointments"
+  },
+  {
+    "id": 8,
+    "question": "Will SaloneMedConnect have online video consultations?",
+    "answer": "Yes! Video consultations are on our development roadmap. We are working to launch this feature soon, which will allow patients across Sierra Leone to consult with specialist doctors without leaving their homes. Subscribe to our newsletter to be notified when this feature launches.",
+    "category": "features"
+  }
+]

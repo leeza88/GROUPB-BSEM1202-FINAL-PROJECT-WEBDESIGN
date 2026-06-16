@@ -1,0 +1,160 @@
+[
+  {
+    "id": 1,
+    "category": "Malaria Prevention",
+    "icon": "fas fa-mosquito",
+    "color": "#dc2626",
+    "bgColor": "rgba(220,38,38,0.08)",
+    "title": "How to Prevent Malaria in Sierra Leone",
+    "summary": "Malaria is the leading cause of illness and death in Sierra Leone. Learn how to protect yourself and your family.",
+    "tips": [
+      "Sleep under insecticide-treated mosquito nets every night",
+      "Use mosquito repellent (DEET-based) on exposed skin at dusk and dawn",
+      "Wear long-sleeved clothing and long trousers in the evenings",
+      "Eliminate standing water around your home where mosquitoes breed",
+      "Take antimalarial prophylaxis if prescribed by your doctor",
+      "Seek immediate treatment if you experience fever, chills, or headache"
+    ],
+    "warning": "If you have a fever above 38°C, seek medical attention within 24 hours. Malaria can be fatal if untreated.",
+    "prevalence": "High risk year-round, peak during rainy season (May–October)"
+  },
+  {
+    "id": 2,
+    "category": "Maternal Health",
+    "icon": "fas fa-baby",
+    "color": "#e91e8c",
+    "bgColor": "rgba(233,30,140,0.08)",
+    "title": "Staying Safe During Pregnancy",
+    "summary": "Sierra Leone has one of the highest maternal mortality rates in the world. Prenatal care saves lives.",
+    "tips": [
+      "Register for antenatal care as early as 8 weeks of pregnancy",
+      "Attend all scheduled antenatal appointments (at least 8 visits recommended)",
+      "Take iron and folic acid supplements as prescribed",
+      "Deliver in a health facility with a skilled birth attendant",
+      "Sleep under an insecticide-treated net during pregnancy",
+      "Get tested for HIV, syphilis, and hepatitis B during pregnancy",
+      "Do not take any traditional herbs or medicines without medical advice"
+    ],
+    "warning": "Danger signs during pregnancy: heavy bleeding, severe headache, blurred vision, swollen face/hands, reduced baby movements — go to hospital immediately.",
+    "prevalence": "Sierra Leone has 443 maternal deaths per 100,000 live births (WHO 2023)"
+  },
+  {
+    "id": 3,
+    "category": "Typhoid Prevention",
+    "icon": "fas fa-glass-water",
+    "color": "#7c3aed",
+    "bgColor": "rgba(124,58,237,0.08)",
+    "title": "Preventing Typhoid & Waterborne Diseases",
+    "summary": "Typhoid fever spreads through contaminated food and water. Prevention is simple and saves lives.",
+    "tips": [
+      "Drink only boiled, bottled, or chlorinated water",
+      "Wash hands thoroughly with soap before eating and after using the toilet",
+      "Eat only freshly cooked, hot food from trusted sources",
+      "Avoid raw vegetables and salads unless you've washed them with clean water",
+      "Store food in covered containers to prevent contamination",
+      "Dispose of waste properly and keep your environment clean",
+      "Get the typhoid vaccine if available in your area"
+    ],
+    "warning": "Symptoms: persistent high fever, headache, stomach pain, loss of appetite. Seek treatment within 48 hours to avoid complications.",
+    "prevalence": "Affects thousands of Sierra Leoneans annually, especially during rainy season"
+  },
+  {
+    "id": 4,
+    "category": "Cholera Prevention",
+    "icon": "fas fa-hand-holding-droplet",
+    "color": "#0a6ebd",
+    "bgColor": "rgba(10,110,189,0.08)",
+    "title": "Protecting Your Family from Cholera",
+    "summary": "Cholera is endemic in Sierra Leone, especially near coastal areas. Basic hygiene prevents outbreaks.",
+    "tips": [
+      "Always boil drinking water or use water purification tablets",
+      "Wash hands with soap before preparing food, eating, and after toilet use",
+      "Use a proper latrine and practice open defecation-free behaviour",
+      "Do not buy food from street vendors with poor hygiene",
+      "Breastfeed infants exclusively for the first 6 months",
+      "Report suspected cholera cases to the nearest health centre immediately"
+    ],
+    "warning": "Cholera causes severe diarrhoea and vomiting. Dehydration can kill within hours. Oral rehydration salts (ORS) are life-saving.",
+    "prevalence": "Sierra Leone experiences regular outbreaks, especially in Western Area and Bo"
+  },
+  {
+    "id": 5,
+    "category": "HIV/AIDS Awareness",
+    "icon": "fas fa-ribbon",
+    "color": "#dc2626",
+    "bgColor": "rgba(220,38,38,0.06)",
+    "title": "HIV Prevention & Treatment in Sierra Leone",
+    "summary": "HIV affects about 1.5% of Sierra Leone's adult population. Testing, prevention, and ART treatment save lives.",
+    "tips": [
+      "Get tested for HIV — it's free at government health centres",
+      "Use condoms consistently and correctly with every sexual encounter",
+      "Know your partner's HIV status before unprotected sex",
+      "People living with HIV should start antiretroviral therapy (ART) immediately",
+      "Prevent mother-to-child transmission through PMTCT programmes",
+      "Do not share needles, syringes, or any sharp instruments",
+      "Stigma is the enemy — treat people living with HIV with respect and dignity"
+    ],
+    "warning": "HIV has no cure but is manageable with ART. People on ART can live long, healthy lives and cannot transmit the virus when undetectable.",
+    "prevalence": "Approximately 85,000 Sierra Leoneans are living with HIV (UNAIDS 2023)"
+  },
+  {
+    "id": 6,
+    "category": "Child Nutrition",
+    "icon": "fas fa-apple-alt",
+    "color": "#10b981",
+    "bgColor": "rgba(16,185,129,0.08)",
+    "title": "Preventing Childhood Malnutrition",
+    "summary": "Malnutrition affects 1 in 3 Sierra Leonean children. Proper feeding in the first 1,000 days is critical.",
+    "tips": [
+      "Exclusively breastfeed your baby for the first 6 months — no water, no formula",
+      "Continue breastfeeding alongside complementary foods until age 2",
+      "Introduce diverse, nutritious foods at 6 months: vegetables, legumes, eggs, fish",
+      "Ensure children receive all routine vaccinations on schedule",
+      "De-worm children aged 12–59 months every 6 months",
+      "Take your child to regular growth monitoring appointments",
+      "Enrol children with severe acute malnutrition (SAM) in feeding programmes"
+    ],
+    "warning": "Signs of malnutrition: wasting (thin arms/legs), oedema (swollen feet), stunting, lethargy. Visit a health centre immediately.",
+    "prevalence": "32% of children under 5 in Sierra Leone are stunted (UNICEF)"
+  },
+  {
+    "id": 7,
+    "category": "Mental Health",
+    "icon": "fas fa-brain",
+    "color": "#7c3aed",
+    "bgColor": "rgba(124,58,237,0.07)",
+    "title": "Taking Care of Your Mental Health",
+    "summary": "Mental health is health. Many Sierra Leoneans experience depression, anxiety, and trauma — help is available.",
+    "tips": [
+      "Talk openly about your feelings with someone you trust",
+      "Seek professional help if you feel persistently sad, hopeless, or anxious",
+      "Mental health treatment is available at Kissy Mental Health Hospital and health centres",
+      "Avoid self-medicating with alcohol, cannabis, or other substances",
+      "Community support, prayer, and cultural practices can complement professional care",
+      "Check on friends and family who may be struggling in silence",
+      "Post-Ebola and post-conflict trauma support is available — you are not alone"
+    ],
+    "warning": "If you or someone you know is having thoughts of suicide, call our emergency line: +232 76 000 911 or go to the nearest hospital.",
+    "prevalence": "An estimated 400,000+ Sierra Leoneans live with a mental health condition"
+  },
+  {
+    "id": 8,
+    "category": "Diabetes Management",
+    "icon": "fas fa-syringe",
+    "color": "#f59e0b",
+    "bgColor": "rgba(245,158,11,0.08)",
+    "title": "Living Well with Diabetes",
+    "summary": "Non-communicable diseases like diabetes are rising in Sierra Leone. Early detection and management prevent complications.",
+    "tips": [
+      "Test your blood sugar regularly, especially if you have risk factors",
+      "Eat a balanced diet low in sugar and refined carbohydrates",
+      "Exercise for at least 30 minutes on most days of the week",
+      "Take medications as prescribed — do not stop without medical advice",
+      "Check your feet daily for sores, blisters, or numbness",
+      "Get your eyes, kidneys, and blood pressure checked annually",
+      "Maintain a healthy weight — obesity greatly increases diabetes risk"
+    ],
+    "warning": "Danger signs: extreme thirst, frequent urination, blurred vision, slow-healing wounds. Get tested at any health centre.",
+    "prevalence": "Diabetes prevalence in Sierra Leone is estimated at 4.5% and rising"
+  }
+]

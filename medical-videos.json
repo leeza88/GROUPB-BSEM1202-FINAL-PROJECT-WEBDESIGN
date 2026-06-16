@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "title": "Understanding Malaria: Prevention & Treatment",
+    "description": "A comprehensive guide to malaria prevention, symptoms, and treatment options relevant to Sierra Leone's healthcare context.",
+    "youtubeId": "PnOFKCQlGfI",
+    "thumbnail": "https://img.youtube.com/vi/PnOFKCQlGfI/maxresdefault.jpg",
+    "duration": "8:24",
+    "category": "Infectious Disease",
+    "source": "WHO Africa",
+    "views": "2.4M"
+  },
+  {
+    "id": 2,
+    "title": "Maternal Health: Safe Pregnancy & Childbirth",
+    "description": "Essential information for pregnant mothers in Sierra Leone — antenatal care, danger signs, and safe delivery.",
+    "youtubeId": "Rc1_8KKVzXM",
+    "thumbnail": "https://img.youtube.com/vi/Rc1_8KKVzXM/maxresdefault.jpg",
+    "duration": "12:15",
+    "category": "Women's Health",
+    "source": "UNFPA",
+    "views": "1.8M"
+  },
+  {
+    "id": 3,
+    "title": "HIV/AIDS: Know Your Status, Know Your Rights",
+    "description": "Everything you need to know about HIV prevention, testing, and treatment in West Africa.",
+    "youtubeId": "0h5Jd7sgQWY",
+    "thumbnail": "https://img.youtube.com/vi/0h5Jd7sgQWY/maxresdefault.jpg",
+    "duration": "6:42",
+    "category": "Infectious Disease",
+    "source": "UNAIDS",
+    "views": "3.1M"
+  },
+  {
+    "id": 4,
+    "title": "Mental Health in Africa: Breaking the Stigma",
+    "description": "A powerful discussion on mental health awareness, stigma reduction, and accessing help in Sub-Saharan Africa.",
+    "youtubeId": "DzAFNr0CXkA",
+    "thumbnail": "https://img.youtube.com/vi/DzAFNr0CXkA/maxresdefault.jpg",
+    "duration": "15:30",
+    "category": "Mental Health",
+    "source": "WHO",
+    "views": "987K"
+  },
+  {
+    "id": 5,
+    "title": "Child Nutrition and the First 1,000 Days",
+    "description": "How proper nutrition in the first 1,000 days of life prevents stunting and sets children up for healthy futures.",
+    "youtubeId": "6_6y5K_NXKI",
+    "thumbnail": "https://img.youtube.com/vi/6_6y5K_NXKI/maxresdefault.jpg",
+    "duration": "9:18",
+    "category": "Child Health",
+    "source": "UNICEF",
+    "views": "1.2M"
+  },
+  {
+    "id": 6,
+    "title": "Diabetes: Prevention and Living Well",
+    "description": "Practical advice for preventing and managing Type 2 diabetes through diet, exercise and medication in African contexts.",
+    "youtubeId": "wZAjVTNfpmc",
+    "thumbnail": "https://img.youtube.com/vi/wZAjVTNfpmc/maxresdefault.jpg",
+    "duration": "11:05",
+    "category": "Non-Communicable Diseases",
+    "source": "WHO Africa",
+    "views": "756K"
+  },
+  {
+    "id": 7,
+    "title": "Reproductive Health & Family Planning",
+    "description": "A guide to modern family planning methods, reproductive rights, and accessing reproductive healthcare services.",
+    "youtubeId": "aBaOzxeWUiA",
+    "thumbnail": "https://img.youtube.com/vi/aBaOzxeWUiA/maxresdefault.jpg",
+    "duration": "13:44",
+    "category": "Women's Health",
+    "source": "Marie Stopes International",
+    "views": "2.0M"
+  },
+  {
+    "id": 8,
+    "title": "Hand Washing & Cholera Prevention",
+    "description": "The life-saving technique of proper handwashing and how it prevents cholera, typhoid, and diarrhoeal diseases.",
+    "youtubeId": "3PmVJQUCm4E",
+    "thumbnail": "https://img.youtube.com/vi/3PmVJQUCm4E/maxresdefault.jpg",
+    "duration": "4:56",
+    "category": "Hygiene & Prevention",
+    "source": "UNICEF",
+    "views": "4.5M"
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title": "General Consultation",
+    "description": "Connect with experienced general practitioners for comprehensive health assessments, diagnosis, and treatment plans from the comfort of your home.",
+    "icon": "fas fa-stethoscope",
+    "color": "#0a6ebd",
+    "link": "pages/services.html#consultation",
+    "features": ["Online & In-Person", "Same-Day Appointments", "Follow-up Care", "Prescription Services"]
+  },
+  {
+    "id": 2,
+    "title": "Find Doctors",
+    "description": "Browse our network of verified, qualified healthcare professionals across Sierra Leone. Filter by specialty, location, hospital, and availability.",
+    "icon": "fas fa-user-md",
+    "color": "#00bfa5",
+    "link": "pages/doctors.html",
+    "features": ["150+ Verified Doctors", "All Specialties", "Real-Time Availability", "Patient Reviews"]
+  },
+  {
+    "id": 3,
+    "title": "Appointment Booking",
+    "description": "Book appointments seamlessly with your preferred doctor or specialist. Receive instant confirmation and reminders via SMS and email.",
+    "icon": "fas fa-calendar-check",
+    "color": "#7c3aed",
+    "link": "pages/appointments.html",
+    "features": ["Instant Confirmation", "SMS Reminders", "Easy Rescheduling", "24/7 Booking"]
+  },
+  {
+    "id": 4,
+    "title": "Medicine Information",
+    "description": "Access Sierra Leone's most comprehensive medicine database. Find dosage information, side effects, alternatives, and local availability.",
+    "icon": "fas fa-pills",
+    "color": "#dc2626",
+    "link": "pages/services.html#medicine",
+    "features": ["Drug Database", "Dosage Guides", "Interaction Checker", "Local Pharmacy Finder"]
+  },
+  {
+    "id": 5,
+    "title": "Lab & Diagnostics",
+    "description": "Book diagnostic tests and laboratory services at partner facilities. Get results online and share them directly with your doctor.",
+    "icon": "fas fa-flask",
+    "color": "#f59e0b",
+    "link": "pages/services.html#lab",
+    "features": ["Blood Tests", "Imaging Services", "Digital Results", "Certified Labs"]
+  },
+  {
+    "id": 6,
+    "title": "Emergency Services",
+    "description": "24/7 emergency assistance and guidance. Get connected to the nearest emergency facility and receive guidance while help is on the way.",
+    "icon": "fas fa-ambulance",
+    "color": "#ef4444",
+    "link": "pages/services.html#emergency",
+    "features": ["24/7 Hotline", "GPS Facility Finder", "Emergency Triage", "Crisis Support"]
+  }
+]
